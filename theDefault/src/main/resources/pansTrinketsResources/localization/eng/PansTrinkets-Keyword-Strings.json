@@ -1,0 +1,62 @@
+[
+  {
+    "NAMES": [
+      "keyword",
+      "keywords"
+    ],
+    "DESCRIPTION": "Whenever you play a card, gain 1 dexterity this turn only."
+  },
+  {
+    "PROPER_NAME": "Multiword Keyword",
+    "NAMES": [
+      "Multiword Keyword",
+      "multiword_keyword",
+      "multiword_keywords",
+      "multikey",
+      "multikeyword"
+    ],
+    "DESCRIPTION": "Make sure the first element in the NAMES is the same as your PROPER_NAME. The rest is to match keywords like the single word keyword."
+  },
+  {
+    "NAMES": [
+      "Quickdraw",
+      "quickdraw"
+    ],
+    "DESCRIPTION": "Whenever you draw this card, draw one card."
+  },
+  {
+    "NAMES": [
+      "Durability",
+      "durability"
+    ],
+    "DESCRIPTION": "Whenever you play this card, lose 1 durability. When it reaches 0, remove this card from your deck."
+  },
+  {
+    "NAMES": [
+      "Weight",
+      "weight"
+    ],
+    "DESCRIPTION": "You can only carry trinkets of a total weight lower than 10."
+  },
+  {
+    "NAMES": [
+      "Illusory",
+      "illusory"
+    ],
+    "DESCRIPTION": "Illusory cards are exhausted when you play them, or at the end of your turn."
+  },
+  {
+    "NAMES": [
+      "Large",
+      "large"
+    ],
+    "DESCRIPTION": "When you draw this card, put a random card other than this one from your hand on the top of your draw pile."
+  },
+  {
+    "NAMES": [
+      "Shifting",
+      "shifting"
+    ],
+    "DESCRIPTION": "When you draw or play this card, it is replaced by a random Shifting trinket"
+  }
+]

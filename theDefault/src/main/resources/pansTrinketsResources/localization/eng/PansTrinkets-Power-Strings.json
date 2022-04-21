@@ -1,0 +1,22 @@
+{
+"pansTrinkets:CommonPower": {
+        "NAME": "Placeholder Power",
+        "DESCRIPTIONS": ["You applied #b", " keyword.", " keywords."]
+},
+"pansTrinkets:RarePower": {
+        "NAME": "Placeholder Power",
+        "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
+},
+"pansTrinkets:ExplosiveTrapPower": {
+        "NAME": "Explosive Trap",
+        "DESCRIPTIONS": ["Deal ", "damage to the first enemy to damage you."]
+},
+"pansTrinkets:KaleidoscopePower": {
+        "NAME": "Kaleidoscope",
+        "DESCRIPTIONS": ["At the start of your turn, add a random panstrinkets:Illusory card of any color in your hand.","At the start of your turn, add "," random panstrinkets:Illusory cards of any color in your hand."]
+},
+"pansTrinkets:BoomerangPower": {
+        "NAME": "Boomerang",
+        "DESCRIPTIONS": ["The next card played is added back to your hand.","The next "," cards played will be added back to your hand."]
+}
+}
