@@ -25,6 +25,6 @@ public class TrinketRewardHelper {
     public static boolean shouldTrinketDrop() {
         int trinkets = carriedWeight(AbstractDungeon.player);
             int r = AbstractDungeon.treasureRng.random(99);
-                return r <= 99; // set here !!!!!!
+                return r <= 20; // set here !!!!!!
     }
 }

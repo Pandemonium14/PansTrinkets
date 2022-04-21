@@ -31,7 +31,7 @@ public class CombatRewardPatch {
         if ((AbstractDungeon.getCurrRoom().event == null || AbstractDungeon.getCurrRoom().event != null && !AbstractDungeon.getCurrRoom().event.noCardsInRewards) && !(AbstractDungeon.getCurrRoom() instanceof TreasureRoom) && !(AbstractDungeon.getCurrRoom() instanceof RestRoom)) {
             RewardItem reward = __Instance.rewards.get(__Instance.rewards.size() - 1);
             ArrayList<AbstractCard> cards = reward.cards;
-            boolean makeTrinket = false;
+            boolean makeTrinket = TrinketRewardHelper.shouldTrinketDrop();
             Iterator iter = cards.iterator();
             while (iter.hasNext() && !makeTrinket) {
                 AbstractCard c = (AbstractCard) iter.next();
@@ -39,6 +39,7 @@ public class CombatRewardPatch {
                     makeTrinket = true;
                 }
             }
+
             if (makeTrinket) {
                 if (!AbstractDungeon.player.hasRelic(BottomlessBag.ID)) {
                     TrinketRewardHelper.maxWeight = TrinketRewardHelper.baseMaxWeight;
