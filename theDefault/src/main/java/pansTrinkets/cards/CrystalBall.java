@@ -12,6 +12,8 @@ import static pansTrinkets.patches.EnumColorPatch.TRINKET_WHITE;
 
 public class CrystalBall extends AbstractTrinket {
 
+    //Need to change/delete this card, the effect is too tedious
+
     public static final String ID = DefaultMod.makeID(CrystalBall.class.getSimpleName());
     public static final String IMG = makeCardPath("SkillTemplate.png");
 

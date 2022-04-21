@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pansTrinkets.DefaultMod;
-import pansTrinkets.actions.AlmostDualWieldAction;
 import pansTrinkets.actions.OrnateMirrorAction;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
