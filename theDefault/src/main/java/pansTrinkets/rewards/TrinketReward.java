@@ -94,7 +94,7 @@ public class TrinketReward extends CustomReward {
         if (linkedReward != null && !AbstractDungeon.combatRewardScreen.rewards.contains(linkedReward) && AbstractDungeon.combatRewardScreen.rewards.contains(this)) {
             this.isLinkedRewardTaken = true;
             this.ignoreReward = true;
-            AbstractDungeon.effectList.add(new RemoveRewardEffect(this));
+            AbstractDungeon.effectList.add(new RemoveRewardEffect(this)); //you get a crash if you remove the reward directly in here
         }
     }
 
