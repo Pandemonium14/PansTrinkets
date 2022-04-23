@@ -32,7 +32,7 @@ public class FriendlyMimic extends AbstractTrinket {
     }
 
     @Override
-    public boolean canPlay(AbstractCard card) {
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         return false;
     }
 

@@ -22,7 +22,7 @@ import static pansTrinkets.DefaultMod.getModID;
 public class TrinketReward extends CustomReward {
     private static final Texture ICON = new Texture(Gdx.files.internal(getModID() + "Resources/images/icon/reward.png"));
     private final boolean isRare;
-    private final ArrayList<AbstractCard> cardChoices;
+    public final ArrayList<AbstractCard> cardChoices;
     public RewardItem linkedReward;
     public boolean isLinkedRewardTaken;
 

@@ -16,9 +16,11 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rewards.RewardSave;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -41,6 +43,7 @@ import java.util.Properties;
 
 import static basemod.BaseMod.addColor;
 import static basemod.BaseMod.addDynamicVariable;
+import static org.lwjgl.util.mapped.MappedObject.foreach;
 import static pansTrinkets.patches.EnumColorPatch.TRINKET_WHITE;
 
 //TODO: DON'T MASS RENAME/REFACTOR
@@ -286,20 +289,34 @@ public class DefaultMod implements
         BaseMod.registerCustomReward(
                 TrinketRewardTypePatch.PANS_TRINKET_TRINKET_REWARD,
                 (rewardSave) -> { // this handles what to do when this quest type is loaded.
+                    ArrayList<RewardItem> rewards = AbstractDungeon.combatRewardScreen.rewards;
+                    RewardItem cardReward = null;
+                    for (RewardItem r : rewards) {
+                        if (r.type == RewardItem.RewardType.CARD) {
+                            cardReward = r;
+                        }
+                    }
+                    if (cardReward != null) {
+                        rewards.remove(cardReward);
+                        TrinketReward trinketReward = new TrinketReward(false);
+                        LinkedCardReward linkedReward = new LinkedCardReward(cardReward.cards, trinketReward);
+                        rewards.add(linkedReward);
+                        rewards.add(trinketReward);
+                    }
                     return new TrinketReward(false);
                 },
                 (customReward) -> { // this handles what to do when this quest type is saved.
                     return new RewardSave(customReward.type.toString(), null);
                 });
 
-        BaseMod.registerCustomReward(
+        /*BaseMod.registerCustomReward(
                 TrinketRewardTypePatch.PANS_TRINKET_CARD_REWARD,
                 (rewardSave) -> { // this handles what to do when this quest type is loaded.
                     return new LinkedCardReward(new ArrayList<>(), null);
                 },
                 (customReward) -> { // this handles what to do when this quest type is saved.
                     return new RewardSave(customReward.type.toString(), null);
-                });
+                });*/
     }
     
     // =============== / POST-INITIALIZE/ =================

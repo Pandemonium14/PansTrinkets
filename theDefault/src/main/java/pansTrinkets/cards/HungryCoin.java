@@ -36,8 +36,8 @@ public class HungryCoin extends AbstractTrinket {
     }
 
     @Override
-    public boolean canPlay(AbstractCard card) {
-        return AbstractDungeon.player.gold >= baseMagicNumber;
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        return p.gold >= baseMagicNumber;
     }
 
     @Override
