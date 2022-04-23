@@ -49,7 +49,7 @@ public class BoomerangPower extends AbstractPower {
 
     @Override
     public void onAfterUseCard(AbstractCard c, UseCardAction action) {
-        if (addBack) {
+        if (addBack && c.type != AbstractCard.CardType.POWER) {
             addToBot(new BoomerangAction(c));
             addToBot(new ReducePowerAction(owner, owner, BoomerangPower.POWER_ID, 1));
         } else {

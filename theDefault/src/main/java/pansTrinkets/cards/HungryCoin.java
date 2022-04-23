@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.FlickCoinEffect;
 import pansTrinkets.DefaultMod;
 
+import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static pansTrinkets.DefaultMod.makeCardPath;
 import static pansTrinkets.patches.EnumColorPatch.TRINKET_WHITE;
 
@@ -26,13 +27,16 @@ public class HungryCoin extends AbstractTrinket {
     public static final CardColor COLOR = TRINKET_WHITE;
 
     private static final int COST = 0;
-    private static final int INCREMENT = 3;
+    private int increment = 3;
 
     public HungryCoin() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseDamage = 3;
         this.baseMagicNumber = 3;
         this.weight = 1;
+
+
+        this.cardStrings = languagePack.getCardStrings(ID);
     }
 
     @Override
@@ -44,12 +48,12 @@ public class HungryCoin extends AbstractTrinket {
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         abstractPlayer.loseGold(baseMagicNumber);
         addToBot( new DamageAction(abstractMonster, new DamageInfo(abstractMonster, this.damage)));
-        this.baseDamage += INCREMENT;
-        this.baseMagicNumber += INCREMENT;
+        this.baseDamage += increment;
+        this.baseMagicNumber += increment;
         AbstractCard masterCard = StSLib.getMasterDeckEquivalent(this);
         if (masterCard != null) {
-            masterCard.baseDamage += INCREMENT;
-            masterCard.baseMagicNumber += INCREMENT;
+            masterCard.baseDamage += increment;
+            masterCard.baseMagicNumber += increment;
         }
         this.makeVisualEffects(abstractPlayer, abstractMonster);
     }
@@ -63,7 +67,8 @@ public class HungryCoin extends AbstractTrinket {
         if (!this.upgraded) {
             this.upgradeName();
             this.quickDraw = true;
-            this.rawDescription = "panstrinkets:Quickdraw NL Lose !M! Gold. Deal !D! damage. Permanently increase this card's damage and gold cost by 3.";
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            increment = 5;
             super.upgrade();
             this.initializeDescription();
         }

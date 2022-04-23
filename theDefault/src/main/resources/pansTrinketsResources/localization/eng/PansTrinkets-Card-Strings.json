@@ -71,7 +71,8 @@
   "DESCRIPTION": "Innate. panstrinkets:Large. NL Scry your entire draw pile. Add !M! Dazed in your draw pile."
 },"pansTrinkets:HungryCoin": {
   "NAME": "Hungry Coin",
-  "DESCRIPTION": "Lose !M! Gold. Deal !D! damage. Permanently increase this card's damage and gold cost by 3."
+  "DESCRIPTION": "Lose !M! Gold. Deal !D! damage. Permanently increase this card's damage and gold cost by 3.",
+  "UPGRADE_DESCRIPTION": "Lose !M! Gold. Deal !D! damage. Permanently increase this card's damage and gold cost by 5."
 },"pansTrinkets:ShieldingTalisman": {
   "NAME": "Shielding Talisman",
   "DESCRIPTION": "Shuffle !M! Guard into your draw pile."
