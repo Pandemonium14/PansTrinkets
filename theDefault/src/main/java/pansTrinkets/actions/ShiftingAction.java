@@ -21,6 +21,7 @@ public class ShiftingAction extends AbstractGameAction {
         card = c;
         this.upgraded = upgraded;
         doSomething = false;
+        destination = g;
     }
 
     public ShiftingAction(CardGroup g, AbstractTrinket c, boolean upgraded, boolean doSomething) {

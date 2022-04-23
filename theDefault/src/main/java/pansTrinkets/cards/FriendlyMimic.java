@@ -26,7 +26,7 @@ public class FriendlyMimic extends AbstractTrinket {
     public FriendlyMimic() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.weight = 3;
-        CardModifierManager.addModifier(this,new ShiftingModifier(this.upgraded));
+        CardModifierManager.addModifier(this, new ShiftingModifier(this.upgraded));
         this.cardStrings = languagePack.getCardStrings(ID);
 
     }

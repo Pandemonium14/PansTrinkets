@@ -20,7 +20,6 @@ public class ShiftingModifier extends AbstractCardModifier {
     public boolean upgraded = false;
 
     public ShiftingModifier(boolean upgraded) {
-
         this.upgraded = upgraded;
     }
 
@@ -32,10 +31,10 @@ public class ShiftingModifier extends AbstractCardModifier {
         }
     }
 
-    @Override
+/*    @Override
     public void onInitialApplication(AbstractCard c) {
         ((AbstractTrinket)c).enableOnDrawActions = false;
-    }
+    }*/
 
     @Override
     public void onDrawn(AbstractCard card) {
@@ -64,7 +63,7 @@ public class ShiftingModifier extends AbstractCardModifier {
 
     @Override
     public boolean shouldApply(AbstractCard card) {
-        return card instanceof AbstractTrinket && !CardModifierManager.hasModifier(card, ID) ;
+        return (card instanceof AbstractTrinket) && !CardModifierManager.hasModifier(card, ID) ;
     }
 
 

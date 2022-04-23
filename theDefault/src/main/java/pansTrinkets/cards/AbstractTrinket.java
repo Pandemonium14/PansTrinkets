@@ -1,6 +1,7 @@
 package pansTrinkets.cards;
 
 import basemod.abstracts.CustomSavable;
+import basemod.helpers.CardModifierManager;
 import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -18,6 +19,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import pansTrinkets.actions.LargeAction;
+import pansTrinkets.cardmods.ShiftingModifier;
 import pansTrinkets.helpers.TrinketRewardHelper;
 
 import java.lang.reflect.Type;
@@ -60,7 +62,7 @@ public abstract class AbstractTrinket extends AbstractDefaultCard implements Cus
     }
 
     public void triggerWhenDrawn(){
-        if (enableOnDrawActions) {
+        if (!CardModifierManager.hasModifier(this, ShiftingModifier.ID)) {
             if (this.quickDraw) {
                 addToBot(new DrawCardAction(1));
             }
