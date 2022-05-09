@@ -11,8 +11,8 @@
 },
   "pansTrinkets:SoothingBalm": {
     "NAME": "Soothing Balm",
-    "DESCRIPTION": "panstrinkets:Quickdraw. NL Exhaust all status cards in your hand, draw pile and discard pile.",
-    "UPGRADE_DESCRIPTION" : "Retain. panstrinkets:Quickdraw. NL Exhaust all status cards in your hand, draw pile and discard pile."
+    "DESCRIPTION": "panstrinkets:Quickdraw. NL Exhaust ALL your Status cards.",
+    "UPGRADE_DESCRIPTION" : "Retain. NL panstrinkets:Quickdraw. NL Exhaust ALL your status cards."
 },
   "pansTrinkets:WornWhetstone": {
     "NAME": "Worn Whetstone",
@@ -59,10 +59,10 @@
   "NAME": "Universal Dictionary",
   "DESCRIPTION": "panstrinkets:Large. NL Draw !M! cards.",
   "UPGRADE_DESCRIPTION": "panstrinkets:Large. NL Draw cards until your hand is full."
-},"pansTrinkets:FriendlyMimic": {
-  "NAME": "Friendly Mimic",
-  "DESCRIPTION": "panstrinkets:Shifting.",
-  "UPGRADE_DESCRIPTION": "panstrinkets:Shifting. NL The cards this shifts into are upgraded."
+},"pansTrinkets:AmorphousMatter": {
+  "NAME": "Amorphous Matter",
+  "DESCRIPTION": "Choose a random trinket to add to your hand. It is panstrinkets:Illusory.",
+  "UPGRADE_DESCRIPTION": "Choose a random trinket to add to your hand. It is panstrinkets:Illusory and Upgraded."
 },"pansTrinkets:FangHammer": {
   "NAME": "Fang Hammer",
   "DESCRIPTION": "Deal !D! damage. If Fatal, heal HP equal to unblocked damage dealt."
@@ -75,13 +75,28 @@
   "UPGRADE_DESCRIPTION": "Lose !M! Gold. Deal !D! damage. Permanently increase this card's damage and gold cost by 5."
 },"pansTrinkets:ShieldingTalisman": {
   "NAME": "Shielding Talisman",
-  "DESCRIPTION": "Shuffle !M! Guard into your draw pile."
+  "DESCRIPTION": "Shuffle !M! Wards into your draw pile."
 },"pansTrinkets:Guard": {
-  "NAME": "Guard",
+  "NAME": "Ward",
   "DESCRIPTION": "panstrinkets:Quickdraw. NL Gain !B! Block."
 },"pansTrinkets:RunicBoomerang": {
   "NAME": "Runic Boomerang",
   "DESCRIPTION": "The next card you play goes back to your hand.",
   "UPGRADE_DESCRIPTION": "The next 2 cards you play go back to your hand."
+},"pansTrinkets:MirrorShield": {
+  "NAME": "Mirror Shield",
+  "DESCRIPTION": "Gain !B! Block. NL Gain !M! Artifact. NL Exhaust"
+},"pansTrinkets:SeedOfPurity": {
+  "NAME": "Seed Of Purity",
+  "DESCRIPTION": "Apply 2 Artifact to an enemy. NL When it loses all its Artifact, remove your debuffs and heal !M! HP. NL Exhaust."
+},"pansTrinkets:SeedOfCorruption": {
+  "NAME": "Seed Of Corruption",
+  "DESCRIPTION": "Apply 2 Artifact to an enemy. When it loses all its Artifact, apply !M! Vulnerable, Weak and Poison to ALL enemies NL Exhaust."
+},"pansTrinkets:Burdened": {
+  "NAME": "Burdened",
+  "DESCRIPTION": "panstrinkets:Large. NL Unplayable."
+},"pansTrinkets:ThePlan": {
+  "NAME": "The Plan",
+  "DESCRIPTION": "Draw !M! cards. They are Retained this turn."
 }
 }

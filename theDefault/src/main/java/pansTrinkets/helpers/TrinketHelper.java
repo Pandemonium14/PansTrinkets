@@ -7,7 +7,7 @@ import pansTrinkets.cards.AbstractTrinket;
 
 import static pansTrinkets.patches.EnumColorPatch.TRINKET_WHITE;
 
-public class TrinketRewardHelper {
+public class TrinketHelper {
 
     public static int baseMaxWeight = 10;
     public static int maxWeight = baseMaxWeight;
@@ -23,8 +23,7 @@ public class TrinketRewardHelper {
     }
 
     public static boolean shouldTrinketDrop() {
-        int trinkets = carriedWeight(AbstractDungeon.player);
-            int r = AbstractDungeon.treasureRng.random(99);
-                return r <= 20; // set here !!!!!!
+        int r = AbstractDungeon.treasureRng.random(99);
+        return r <= 20; // set here !!!!!!
     }
 }

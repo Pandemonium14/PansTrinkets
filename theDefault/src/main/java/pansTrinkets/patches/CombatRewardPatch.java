@@ -2,10 +2,8 @@ package pansTrinkets.patches;
 
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.rooms.TreasureRoom;
@@ -13,7 +11,7 @@ import com.megacrit.cardcrawl.screens.CombatRewardScreen;
 import com.megacrit.cardcrawl.ui.buttons.ProceedButton;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
-import pansTrinkets.helpers.TrinketRewardHelper;
+import pansTrinkets.helpers.TrinketHelper;
 import pansTrinkets.relics.BottomlessBag;
 import pansTrinkets.rewards.LinkedCardReward;
 import pansTrinkets.rewards.TrinketReward;
@@ -31,7 +29,7 @@ public class CombatRewardPatch {
         if ((AbstractDungeon.getCurrRoom().event == null || AbstractDungeon.getCurrRoom().event != null && !AbstractDungeon.getCurrRoom().event.noCardsInRewards) && !(AbstractDungeon.getCurrRoom() instanceof TreasureRoom) && !(AbstractDungeon.getCurrRoom() instanceof RestRoom)) {
             RewardItem reward = __Instance.rewards.get(__Instance.rewards.size() - 1);
             ArrayList<AbstractCard> cards = reward.cards;
-            boolean makeTrinket = TrinketRewardHelper.shouldTrinketDrop();
+            boolean makeTrinket = TrinketHelper.shouldTrinketDrop();
             Iterator iter = cards.iterator();
             while (iter.hasNext() && !makeTrinket) {
                 AbstractCard c = (AbstractCard) iter.next();
@@ -42,7 +40,7 @@ public class CombatRewardPatch {
 
             if (makeTrinket) {
                 if (!AbstractDungeon.player.hasRelic(BottomlessBag.ID)) {
-                    TrinketRewardHelper.maxWeight = TrinketRewardHelper.baseMaxWeight;
+                    TrinketHelper.maxWeight = TrinketHelper.baseMaxWeight;
                 }
                 __Instance.rewards.remove(reward);
                 TrinketReward trinkets = new TrinketReward(false);

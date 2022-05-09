@@ -42,9 +42,8 @@ public class ExplosiveTrapPower extends AbstractPower {
         type = PowerType.BUFF;
         isTurnBased = false;
 
-        // We load those txtures here.
-        this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
+
+        loadRegion("the_bomb");
 
         updateDescription();
     }

@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
+import pansTrinkets.cards.AbstractTrinket;
 import pansTrinkets.patches.EnumColorPatch;
 
 import javax.smartcardio.Card;
@@ -66,6 +67,34 @@ public class TrinketLibrary {
         return trinkets;
     }
 
+    public static void makeCharacterLists(AbstractPlayer.PlayerClass chosenClass) {
+        Iterator<Map.Entry<String, AbstractCard>> iter = allCardsSet.iterator();
+        while (iter.hasNext()) {
+            Map.Entry<String, AbstractCard> e = iter.next();
+            String key = e.getKey();
+            AbstractCard c = e.getValue();
+            if (c.color.equals(TRINKET_WHITE)) {
+                AbstractTrinket trinket = (AbstractTrinket) c;
+                if (trinket.availableFor.size() == 0) {
+                    addToLibrary(trinket);
+                } else if (trinket.availableFor.contains(chosenClass)) {
+                    addToLibrary(trinket);
+                }
+            }
+        }
+    }
 
+    public static void addToLibrary(AbstractTrinket t) {
+        if (!t.rarity.equals(AbstractCard.CardRarity.SPECIAL)) {
+            allTrinkets.group.add(t);
+        }
+        if (t.rarity.equals(AbstractCard.CardRarity.COMMON)) {
+            CommonTrinkets.group.add(t);
+        } else if (t.rarity.equals(AbstractCard.CardRarity.UNCOMMON)) {
+            UncommonTrinkets.group.add(t);
+        } else if (t.rarity.equals(AbstractCard.CardRarity.RARE)) {
+            RareTrinkets.group.add(t);
+        }
+    }
 
 }

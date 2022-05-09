@@ -1,10 +1,10 @@
-package pansTrinkets.cards;
+package pansTrinkets.cards.finished;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.unique.ExpertiseAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pansTrinkets.DefaultMod;
+import pansTrinkets.cards.AbstractTrinket;
 
 import static pansTrinkets.DefaultMod.makeCardPath;
 import static pansTrinkets.patches.EnumColorPatch.TRINKET_WHITE;
@@ -26,17 +26,15 @@ public class UniversalDictionary extends AbstractTrinket {
     public UniversalDictionary() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.large = true;
-        this.weight = 5;
+        this.weight = 4;
         this.magicNumber = this.baseMagicNumber = MAGIC;
     }
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        if (!upgraded) {
-            addToBot(new DrawCardAction(magicNumber));
-        } else {
-            addToBot(new ExpertiseAction(abstractPlayer,abstractPlayer.masterHandSize));
-        }
+
+        addToBot(new DrawCardAction(magicNumber));
+
     }
 
     @Override
@@ -45,7 +43,7 @@ public class UniversalDictionary extends AbstractTrinket {
         if (!this.upgraded) {
             this.upgradeName();
             super.upgrade();
-            this.rawDescription = "panstrinkets:Large. NL Draw cards until your hand is full.";
+            weight = 2;
             this.initializeDescription();
         }
     }

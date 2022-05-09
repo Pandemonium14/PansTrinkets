@@ -1,19 +1,18 @@
-package pansTrinkets.cards;
+package pansTrinkets.cards.finished;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pansTrinkets.DefaultMod;
-import pansTrinkets.powers.ExplosiveTrapPower;
+import pansTrinkets.cards.AbstractTrinket;
+import pansTrinkets.powers.KaleidoscopePower;
 
 import static pansTrinkets.DefaultMod.makeCardPath;
 import static pansTrinkets.patches.EnumColorPatch.TRINKET_WHITE;
 
-public class ExplosiveTrap extends AbstractTrinket {
-
-    public static final String ID = DefaultMod.makeID(ExplosiveTrap.class.getSimpleName());
-    public static final String IMG = makeCardPath("ExplosiveTrap.png");
+public class Kaleidoscope extends AbstractTrinket {
+    public static final String ID = DefaultMod.makeID(Kaleidoscope.class.getSimpleName());
+    public static final String IMG = makeCardPath("Kaleidoscope.png");
 
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
@@ -23,25 +22,21 @@ public class ExplosiveTrap extends AbstractTrinket {
 
     private static final int COST = 1;
 
-    public ExplosiveTrap() {
+    public Kaleidoscope() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 15;
-        this.isInnate = true;
-        this.weight = 3;
-
+        this.weight = 4;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster abstractMonster) {
-        addToBot(new ApplyPowerAction(p,p,new ExplosiveTrapPower(p,p, this.magicNumber)));
-        super.use();
+        addToBot( new ApplyPowerAction(p, p, new KaleidoscopePower(p ,p ,1)));
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(6);
+            this.upgradeBaseCost(0);
             super.upgrade();
             this.initializeDescription();
         }

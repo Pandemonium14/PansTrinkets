@@ -7,8 +7,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.screens.CardRewardScreen;
 import pansTrinkets.cards.AbstractTrinket;
-import pansTrinkets.helpers.TrinketRewardHelper;
-import pansTrinkets.patches.EnumColorPatch;
+import pansTrinkets.helpers.TrinketHelper;
 
 @SpirePatch(clz = CardRewardScreen.class, method = "update")
 public class WeightCheckCardRewardScreenPatch {
@@ -17,7 +16,7 @@ public class WeightCheckCardRewardScreenPatch {
         AbstractCard card = ReflectionHacks.getPrivate(__Instance,CardRewardScreen.class, "touchCard");
         if (card != null && card.color.equals(EnumColorPatch.TRINKET_WHITE)) {
             AbstractTrinket trinket = (AbstractTrinket) card;
-            if (trinket.weight + TrinketRewardHelper.carriedWeight(AbstractDungeon.player) > TrinketRewardHelper.maxWeight) {
+            if (trinket.weight + TrinketHelper.carriedWeight(AbstractDungeon.player) > TrinketHelper.maxWeight) {
                 ReflectionHacks.setPrivate(__Instance,CardRewardScreen.class, "touchCard", null);
             }
         }

@@ -32,6 +32,7 @@ import pansTrinkets.rewards.LinkedCardReward;
 import pansTrinkets.rewards.TrinketReward;
 import pansTrinkets.util.IDCheckDontTouchPls;
 import pansTrinkets.util.TextureLoader;
+import pansTrinkets.util.TopPanelWeight;
 import pansTrinkets.util.WeightIcon;
 import pansTrinkets.variables.DurabilityVariable;
 
@@ -80,7 +81,8 @@ public class DefaultMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         PostInitializeSubscriber,
-        EditCardsSubscriber {
+        EditCardsSubscriber,
+        StartGameSubscriber {
     // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
     // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
     public static final Logger logger = LogManager.getLogger(DefaultMod.class.getName());
@@ -94,7 +96,7 @@ public class DefaultMod implements
     //This is for the in-game mod settings panel.
     private static final String MODNAME = "Pan's Trinkets";
     private static final String AUTHOR = "Pandemonium"; // And pretty soon - You!
-    private static final String DESCRIPTION = "A base for Slay the Spire to start your own mod from, feat. the Default.";
+    private static final String DESCRIPTION = "Adds a new kind of card and a new kind of reward.";
     
     // =============== INPUT TEXTURE LOCATION =================
   
@@ -284,6 +286,8 @@ public class DefaultMod implements
 
         logger.info("Done loading badge Image and mod options");
 
+        BaseMod.addTopPanelItem(new TopPanelWeight());
+
         TrinketLibrary.makeLists();
 
         BaseMod.registerCustomReward(
@@ -415,5 +419,10 @@ public class DefaultMod implements
     // in order to avoid conflicts if any other mod uses the same ID.
     public static String makeID(String idText) {
         return getModID() + ":" + idText;
+    }
+
+    @Override
+    public void receiveStartGame() {
+        TrinketLibrary.makeCharacterLists(AbstractDungeon.player.chosenClass);
     }
 }

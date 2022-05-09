@@ -31,7 +31,7 @@ public class SapphireLocket extends AbstractTrinket {
         this.isEthereal = true;
         this.isInnate = true;
         this.exhaust = true;
-        this.weight = 3;
+        this.weight = 1;
         this.magicNumber = this.baseMagicNumber = 1;
         this.cardStrings = languagePack.getCardStrings(ID);
     }

@@ -1,18 +1,20 @@
-package pansTrinkets.cards;
+package pansTrinkets.cards.finished;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.EnergizedBluePower;
 import pansTrinkets.DefaultMod;
+import pansTrinkets.cards.AbstractTrinket;
 
+import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static pansTrinkets.DefaultMod.makeCardPath;
 import static pansTrinkets.patches.EnumColorPatch.TRINKET_WHITE;
 
-public class WornWhetstone extends AbstractTrinket {
+public class DimLantern extends AbstractTrinket {
 
-    public static final String ID = DefaultMod.makeID(WornWhetstone.class.getSimpleName());
-    public static final String IMG = makeCardPath("WornWhetstone.png");
+    public static final String ID = DefaultMod.makeID(DimLantern.class.getSimpleName());
+    public static final String IMG = makeCardPath("DimLantern.png");
 
 
     private static final CardRarity RARITY = CardRarity.COMMON;
@@ -22,24 +24,28 @@ public class WornWhetstone extends AbstractTrinket {
 
     private static final int COST = 0;
 
-    public WornWhetstone() {
+    public DimLantern() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 2;
-        this.weight = 4;
-        this.large = true;
+        this.magicNumber = this.baseMagicNumber = 1;
+        this.quickDraw = true;
+        this.weight = 3;
+        cardStrings = languagePack.getCardStrings(ID);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p, new StrengthPower(p,this.magicNumber)));
+        this.addToBot(new ApplyPowerAction(p, p, new EnergizedBluePower(p, magicNumber), magicNumber));
         super.use();
     }
 
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             this.upgradeMagicNumber(1);
             super.upgrade();
             this.initializeDescription();
         }
     }
+
+
 }

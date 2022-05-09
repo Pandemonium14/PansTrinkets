@@ -43,20 +43,20 @@
       "Illusory",
       "illusory"
     ],
-    "DESCRIPTION": "Illusory cards are exhausted when you play them, or at the end of your turn."
+    "DESCRIPTION": "Illusory cards are exhausted when you play them, or at the end of your turn if they are in your hand."
   },
   {
     "NAMES": [
       "Large",
       "large"
     ],
-    "DESCRIPTION": "When you draw this card, put a random card other than this one from your hand on the top of your draw pile."
+    "DESCRIPTION": "When drawn, put a random card other than this one from your hand on the top of your draw pile."
   },
   {
     "NAMES": [
       "Shifting",
       "shifting"
     ],
-    "DESCRIPTION": "When you draw or play this card, it is replaced by a random Shifting trinket"
+    "DESCRIPTION": "When drawn or played, replace this card with a random Shifting trinket"
   }
 ]

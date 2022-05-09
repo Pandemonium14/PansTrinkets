@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class SingleViewWeightRender {
 
-
+    private static final Texture tex = ImageMaster.loadImage("pansTrinketsResources/images/icon/WeightSingleViewIcon.png");
     private static float yOffset = 120.0F * Settings.scale;
     private static float centerX = (float)Settings.WIDTH / 2.0F;
     private static float centerY = (float)Settings.HEIGHT / 2.0F;
@@ -36,7 +36,7 @@ public class SingleViewWeightRender {
 
         if(!card.isLocked && card.isSeen) {
 
-                Texture tex = ImageMaster.loadImage("pansTrinketsResources/images/icon/WeightSingleViewIcon.png");// <----------
+                // <----------
                 if (card.weight != 0) {
 
                     renderElementHelper(sb, tex, centerX - 348.0F * Settings.scale,

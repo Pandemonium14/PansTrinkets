@@ -1,17 +1,17 @@
-package pansTrinkets.cards;
+package pansTrinkets.cards.finished;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pansTrinkets.DefaultMod;
+import pansTrinkets.cards.AbstractTrinket;
 
 import static pansTrinkets.DefaultMod.makeCardPath;
-import static pansTrinkets.patches.EnumColorPatch.TRINKET_WHITE;
 
 public class Guard extends AbstractTrinket {
 
     public static final String ID = DefaultMod.makeID(Guard.class.getSimpleName());
-    public static final String IMG = makeCardPath("SkillTemplate.png");
+    public static final String IMG = makeCardPath("Ward.png");
 
 
     private static final CardRarity RARITY = CardRarity.SPECIAL;

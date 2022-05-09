@@ -12,7 +12,7 @@ import com.evacipated.cardcrawl.mod.stslib.StSLib;
 import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.ExceptionHandler;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -20,7 +20,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import pansTrinkets.actions.LargeAction;
 import pansTrinkets.cardmods.ShiftingModifier;
-import pansTrinkets.helpers.TrinketRewardHelper;
+import pansTrinkets.helpers.TrinketHelper;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -41,6 +41,9 @@ public abstract class AbstractTrinket extends AbstractDefaultCard implements Cus
     public boolean enableOnDrawActions = true;
     private Color renderColor = Color.WHITE.cpy();
     public CardStrings cardStrings;
+    public ArrayList<AbstractPlayer.PlayerClass> availableFor = new ArrayList<>();
+
+    public static final Texture WEIGHT_ICON = ImageMaster.loadImage("pansTrinketsResources/images/icon/WeightIcon.png");
 
     @Override
     public boolean canPlay(AbstractCard card) {
@@ -106,6 +109,7 @@ public abstract class AbstractTrinket extends AbstractDefaultCard implements Cus
         c.baseDurability = this.baseDurability;
         c.timesUsed = this.timesUsed;
         c.durability = c.baseDurability - c.timesUsed;
+        c.weight = weight;
         return c;
     }
 
@@ -135,17 +139,17 @@ public abstract class AbstractTrinket extends AbstractDefaultCard implements Cus
         float drawX = this.current_x - 256.0F;
         float drawY = this.current_y - 256.0F;
 
-        Texture icon = ImageMaster.loadImage("pansTrinketsResources/images/icon/WeightIcon.png");
+
 
         if(!this.isLocked && this.isSeen) {
             float yOffset = 94.0F * Settings.scale * this.drawScale;
             Vector2 offset = new Vector2(89.0F * this.drawScale * Settings.scale, -yOffset);
             offset.rotate(this.angle);
-            this.renderHelper(sb, this.renderColor, icon, drawX + offset.x, drawY + offset.y);
+            this.renderHelper(sb, this.renderColor, WEIGHT_ICON, drawX + offset.x, drawY + offset.y);
 
             String msg = weight + "";
             Color weightColor = Color.WHITE;
-            if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.CARD_REWARD && (weight + TrinketRewardHelper.carriedWeight(AbstractDungeon.player) > TrinketRewardHelper.maxWeight)) {
+            if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.CARD_REWARD && (weight + TrinketHelper.carriedWeight(AbstractDungeon.player) > TrinketHelper.maxWeight)) {
                 weightColor = Color.RED;
             }
             FontHelper.renderRotatedText(sb, getWeightFont(this), msg, this.current_x,
@@ -168,7 +172,9 @@ public abstract class AbstractTrinket extends AbstractDefaultCard implements Cus
     @Override
     public List<TooltipInfo> getCustomTooltips() {
         List<TooltipInfo> tips = new ArrayList<TooltipInfo>();
-        tips.add(new TooltipInfo("[pansTrinkets:WeightIcon] Weight","You can only carry trinkets of a total weight lower than 10."));
+        if (weight > 0) {
+            tips.add(new TooltipInfo("[pansTrinkets:WeightIcon] Weight", "You can only carry trinkets of a total weight lower than 10."));
+        }
         return tips;
     }
 

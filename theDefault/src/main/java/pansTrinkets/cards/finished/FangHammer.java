@@ -1,7 +1,6 @@
-package pansTrinkets.cards;
+package pansTrinkets.cards.finished;
 
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.defect.SunderAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -9,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect;
 import pansTrinkets.DefaultMod;
 import pansTrinkets.actions.FangHammerAction;
+import pansTrinkets.cards.AbstractTrinket;
 
 import static pansTrinkets.DefaultMod.makeCardPath;
 import static pansTrinkets.patches.EnumColorPatch.TRINKET_WHITE;
@@ -16,7 +16,7 @@ import static pansTrinkets.patches.EnumColorPatch.TRINKET_WHITE;
 public class FangHammer extends AbstractTrinket {
 
     public static final String ID = DefaultMod.makeID(FangHammer.class.getSimpleName());
-    public static final String IMG = makeCardPath("AttackTemplate.png");
+    public static final String IMG = makeCardPath("FangHammer.png");
 
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
@@ -28,15 +28,19 @@ public class FangHammer extends AbstractTrinket {
 
     public FangHammer() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.baseDamage = 15;
-        this.weight = 3;
+        this.baseDamage = 12;
+        this.weight = 4;
+
+        availableFor.add(AbstractPlayer.PlayerClass.IRONCLAD);
+        availableFor.add(AbstractPlayer.PlayerClass.THE_SILENT);
+        availableFor.add(AbstractPlayer.PlayerClass.DEFECT);
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(5);
+            this.upgradeDamage(4);
             super.upgrade();
             this.initializeDescription();
         }

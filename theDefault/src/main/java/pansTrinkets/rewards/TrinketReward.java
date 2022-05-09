@@ -20,7 +20,7 @@ import java.util.Iterator;
 import static pansTrinkets.DefaultMod.getModID;
 
 public class TrinketReward extends CustomReward {
-    private static final Texture ICON = new Texture(Gdx.files.internal(getModID() + "Resources/images/icon/reward.png"));
+    private static final Texture ICON = new Texture(Gdx.files.internal(getModID() + "Resources/images/icon/trinketReward.png"));
     private final boolean isRare;
     public final ArrayList<AbstractCard> cardChoices;
     public RewardItem linkedReward;
@@ -53,7 +53,7 @@ public class TrinketReward extends CustomReward {
         return false;
     }
 
-    public ArrayList<AbstractCard> generateCardChoices() {
+    public static ArrayList<AbstractCard> generateCardChoices() {
         ArrayList derp = new ArrayList();// 57
 
         while(derp.size() != 3) {// 60

@@ -1,19 +1,19 @@
-package pansTrinkets.cards;
+package pansTrinkets.cards.finished;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pansTrinkets.DefaultMod;
+import pansTrinkets.cards.AbstractTrinket;
 
 import java.util.Iterator;
 
 import static pansTrinkets.DefaultMod.makeCardPath;
-import static pansTrinkets.patches.EnumColorPatch.TRINKET_WHITE;
 
-public class FromBelow extends AbstractTrinket{
-    public static final String ID = DefaultMod.makeID(FromBelow.class.getSimpleName());
-    public static final String IMG = makeCardPath("FromBelow.png");
+public class RiseAbove extends AbstractTrinket {
+    public static final String ID = DefaultMod.makeID(RiseAbove.class.getSimpleName());
+    public static final String IMG = makeCardPath("RiseAbove.png");
 
 
     private static final AbstractCard.CardRarity RARITY = CardRarity.SPECIAL;
@@ -23,7 +23,7 @@ public class FromBelow extends AbstractTrinket{
 
     private static final int COST = -2;
 
-    public FromBelow() {
+    public RiseAbove() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
     }
 
@@ -32,7 +32,7 @@ public class FromBelow extends AbstractTrinket{
     }// 40
 
     public void onChoseThisOption() {
-        Iterator var2 = AbstractDungeon.player.discardPile.group.iterator();
+        Iterator var2 = AbstractDungeon.player.drawPile.group.iterator();
 
         while(var2.hasNext()) {
             AbstractCard c = (AbstractCard)var2.next();

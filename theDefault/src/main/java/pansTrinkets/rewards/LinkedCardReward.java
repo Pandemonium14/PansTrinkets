@@ -16,7 +16,7 @@ import static pansTrinkets.DefaultMod.getModID;
 
 public class LinkedCardReward extends CustomReward {
 
-    private static final Texture ICON = new Texture(Gdx.files.internal(getModID() + "Resources/images/icon/reward.png"));
+    private static final Texture ICON = new Texture(Gdx.files.internal(getModID() + "Resources/images/icon/cardReward.png"));
     private final ArrayList<AbstractCard> cardChoices;
     public RewardItem linkedReward;
     public boolean isLinkedRewardTaken;

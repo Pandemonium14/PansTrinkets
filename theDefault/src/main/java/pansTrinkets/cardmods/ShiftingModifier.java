@@ -2,15 +2,13 @@ package pansTrinkets.cardmods;
 
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import pansTrinkets.actions.ShiftingAction;
 import pansTrinkets.cards.AbstractTrinket;
-import pansTrinkets.cards.FriendlyMimic;
-import pansTrinkets.helpers.TrinketLibrary;
+import pansTrinkets.cards.finished.AmorphousMatter;
 
 public class ShiftingModifier extends AbstractCardModifier {
 
@@ -24,7 +22,7 @@ public class ShiftingModifier extends AbstractCardModifier {
     }
 
     public String modifyDescription(String rawDescription, AbstractCard card) {
-        if ( !(card instanceof FriendlyMimic)) {
+        if ( !(card instanceof AmorphousMatter)) {
             return rawDescription + " NL panstrinkets:Shifting.";
         } else {
             return rawDescription;

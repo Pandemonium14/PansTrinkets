@@ -1,19 +1,18 @@
-package pansTrinkets.cards;
+package pansTrinkets.cards.finished;
 
-import basemod.helpers.CardModifierManager;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pansTrinkets.DefaultMod;
-import pansTrinkets.cardmods.ShiftingModifier;
+import pansTrinkets.actions.AmorphousMatterAction;
+import pansTrinkets.cards.AbstractTrinket;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static pansTrinkets.DefaultMod.makeCardPath;
 import static pansTrinkets.patches.EnumColorPatch.TRINKET_WHITE;
 
-public class FriendlyMimic extends AbstractTrinket {
-    public static final String ID = DefaultMod.makeID(FriendlyMimic.class.getSimpleName());
-    public static final String IMG = makeCardPath("SkillTemplate.png");
+public class AmorphousMatter extends AbstractTrinket {
+    public static final String ID = DefaultMod.makeID(AmorphousMatter.class.getSimpleName());
+    public static final String IMG = makeCardPath("AmorphousMatter.png");
 
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
@@ -21,23 +20,19 @@ public class FriendlyMimic extends AbstractTrinket {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TRINKET_WHITE;
 
-    private static final int COST = -2;
+    private static final int COST = 0;
 
-    public FriendlyMimic() {
+    public AmorphousMatter() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.weight = 3;
-        CardModifierManager.addModifier(this, new ShiftingModifier(this.upgraded));
         this.cardStrings = languagePack.getCardStrings(ID);
 
     }
 
-    @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return false;
-    }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new AmorphousMatterAction(upgraded));
     }
 
     @Override
@@ -45,8 +40,6 @@ public class FriendlyMimic extends AbstractTrinket {
         if (!this.upgraded) {
             this.upgradeName();
             rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-            CardModifierManager.removeAllModifiers(this, true);
-            CardModifierManager.addModifier(this, new ShiftingModifier(true));
             super.upgrade();
             this.initializeDescription();
         }

@@ -3,7 +3,6 @@ package pansTrinkets.relics;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import pansTrinkets.DefaultMod;
-import pansTrinkets.helpers.TrinketRewardHelper;
 import pansTrinkets.util.TextureLoader;
 
 import static pansTrinkets.DefaultMod.makeRelicOutlinePath;

@@ -1,17 +1,19 @@
-package pansTrinkets.cards;
+package pansTrinkets.cards.finished;
 
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pansTrinkets.DefaultMod;
+import pansTrinkets.cards.AbstractTrinket;
+import pansTrinkets.powers.ExplosiveTrapPower;
 
 import static pansTrinkets.DefaultMod.makeCardPath;
 import static pansTrinkets.patches.EnumColorPatch.TRINKET_WHITE;
 
-public class ShieldingTalisman extends AbstractTrinket {
+public class ExplosiveTrap extends AbstractTrinket {
 
-    public static final String ID = DefaultMod.makeID(ShieldingTalisman.class.getSimpleName());
-    public static final String IMG = makeCardPath("PowerTemplate.png");
+    public static final String ID = DefaultMod.makeID(ExplosiveTrap.class.getSimpleName());
+    public static final String IMG = makeCardPath("ExplosiveTrap.png");
 
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
@@ -21,26 +23,27 @@ public class ShieldingTalisman extends AbstractTrinket {
 
     private static final int COST = 1;
 
-    public ShieldingTalisman() {
+    public ExplosiveTrap() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.weight = 3;
-        this.magicNumber = this.baseMagicNumber = 2;
-        this.cardsToPreview = new Guard();
+        this.magicNumber = this.baseMagicNumber = 15;
+        this.isInnate = true;
+        this.weight = 4;
+
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new MakeTempCardInDrawPileAction(new Guard(), magicNumber, true, true));
+    public void use(AbstractPlayer p, AbstractMonster abstractMonster) {
+        addToBot(new ApplyPowerAction(p,p,new ExplosiveTrapPower(p,p, this.magicNumber)));
+        super.use();
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(1);
+            this.upgradeMagicNumber(6);
             super.upgrade();
             this.initializeDescription();
         }
     }
 }
-

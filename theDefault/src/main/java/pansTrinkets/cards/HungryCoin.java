@@ -18,7 +18,7 @@ import static pansTrinkets.patches.EnumColorPatch.TRINKET_WHITE;
 public class HungryCoin extends AbstractTrinket {
 
     public static final String ID = DefaultMod.makeID(HungryCoin.class.getSimpleName());
-    public static final String IMG = makeCardPath("AttackTemplate.png");
+    public static final String IMG = makeCardPath("HungryCoin.png");
 
 
     private static final CardRarity RARITY = CardRarity.RARE;

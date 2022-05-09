@@ -1,18 +1,18 @@
-package pansTrinkets.cards;
+package pansTrinkets.cards.finished;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
-import com.megacrit.cardcrawl.powers.IntangiblePower;
 import pansTrinkets.DefaultMod;
+import pansTrinkets.cards.AbstractTrinket;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static pansTrinkets.DefaultMod.makeCardPath;
 import static pansTrinkets.patches.EnumColorPatch.TRINKET_WHITE;
 
 public class WraithCloak extends AbstractTrinket {
-        public static final String ID = DefaultMod.makeID(pansTrinkets.cards.WraithCloak.class.getSimpleName());
+        public static final String ID = DefaultMod.makeID(WraithCloak.class.getSimpleName());
         public static final String IMG = makeCardPath("WraithCloak.png");
 
 
@@ -26,9 +26,11 @@ public class WraithCloak extends AbstractTrinket {
         public WraithCloak() {
             super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
             this.magicNumber = this.baseMagicNumber = 1;
-            this.weight = 3;
+            this.weight = 4;
             this.isEthereal = true;
             cardStrings = languagePack.getCardStrings(ID);
+
+
         }
 
     @Override

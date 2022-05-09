@@ -1,14 +1,15 @@
-package pansTrinkets.cards;
+package pansTrinkets.cards.finished;
 
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingField;
 import com.megacrit.cardcrawl.actions.common.GainGoldAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
 import pansTrinkets.DefaultMod;
+import pansTrinkets.cards.AbstractTrinket;
 
 import static pansTrinkets.DefaultMod.makeCardPath;
-import static pansTrinkets.DefaultMod.theDefaultDefaultSettings;
 import static pansTrinkets.patches.EnumColorPatch.TRINKET_WHITE;
 
 public class SealedBox extends AbstractTrinket {
@@ -25,12 +26,9 @@ public class SealedBox extends AbstractTrinket {
 
     public SealedBox() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 50;
-        this.weight = 3;
-        this.baseDurability = 1;
-        this.durability = 1;
-        this.hasDurability = true;
-        this.purgeOnUse = true;
+        magicNumber = baseMagicNumber = 50;
+        weight = 1;
+        FleetingField.fleeting.set(this, true);
     }
 
     @Override

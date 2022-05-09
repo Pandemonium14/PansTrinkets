@@ -1,4 +1,4 @@
-package pansTrinkets.cards;
+package pansTrinkets.cards.finished;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pansTrinkets.DefaultMod;
+import pansTrinkets.cards.AbstractTrinket;
 
 import static pansTrinkets.DefaultMod.makeCardPath;
 import static pansTrinkets.patches.EnumColorPatch.TRINKET_WHITE;
@@ -28,7 +29,7 @@ public class BagOfDaggers extends AbstractTrinket {
         this.baseDamage = 4;
         this.quickDraw = true;
         this.shuffleBackIntoDrawPile = true;
-        this.weight = 3;
+        this.weight = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
