@@ -358,7 +358,7 @@ public class DefaultMod implements
     public void receiveEditRelics() {
         logger.info("Adding relics");
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
-        BaseMod.addRelic(new BottomlessBag(), RelicType.SHARED);
+
         // This adds a relic to the Shared pool. Every character can find this relic.
         logger.info("Done adding relics!");
     }

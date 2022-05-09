@@ -15,7 +15,7 @@ public class AmorphousMatter extends AbstractTrinket {
     public static final String IMG = makeCardPath("AmorphousMatter.png");
 
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TRINKET_WHITE;
@@ -24,7 +24,7 @@ public class AmorphousMatter extends AbstractTrinket {
 
     public AmorphousMatter() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.weight = 3;
+        this.weight = 2;
         this.cardStrings = languagePack.getCardStrings(ID);
 
     }

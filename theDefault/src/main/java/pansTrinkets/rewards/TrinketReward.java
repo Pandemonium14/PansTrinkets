@@ -60,9 +60,9 @@ public class TrinketReward extends CustomReward {
             boolean dupe = false;// 61
             int roll = AbstractDungeon.treasureRng.random(99);// !!! CHANGE THIS BACK TO 99 !!!
             AbstractCard.CardRarity cardRarity;
-            if (roll < 50) {// 65
+            if (roll < 0) {// 65
                 cardRarity = AbstractCard.CardRarity.COMMON;// 66
-            } else if (roll < 90) {// 67
+            } else if (roll < 80) {// 67
                 cardRarity = AbstractCard.CardRarity.UNCOMMON;// 68
             } else {
                 cardRarity = AbstractCard.CardRarity.RARE;// 70

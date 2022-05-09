@@ -19,7 +19,7 @@ public class FangHammer extends AbstractTrinket {
     public static final String IMG = makeCardPath("FangHammer.png");
 
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TRINKET_WHITE;
@@ -28,7 +28,7 @@ public class FangHammer extends AbstractTrinket {
 
     public FangHammer() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.baseDamage = 12;
+        this.baseDamage = 14;
         this.weight = 4;
 
         availableFor.add(AbstractPlayer.PlayerClass.IRONCLAD);

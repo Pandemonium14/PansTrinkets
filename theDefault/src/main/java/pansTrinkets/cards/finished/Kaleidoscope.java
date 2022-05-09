@@ -15,7 +15,7 @@ public class Kaleidoscope extends AbstractTrinket {
     public static final String IMG = makeCardPath("Kaleidoscope.png");
 
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = TRINKET_WHITE;

@@ -75,7 +75,7 @@
   "UPGRADE_DESCRIPTION": "Lose !M! Gold. Deal !D! damage. Permanently increase this card's damage and gold cost by 5."
 },"pansTrinkets:ShieldingTalisman": {
   "NAME": "Shielding Talisman",
-  "DESCRIPTION": "Shuffle !M! Wards into your draw pile."
+  "DESCRIPTION": "Shuffle !M! #yWards into your draw pile."
 },"pansTrinkets:Guard": {
   "NAME": "Ward",
   "DESCRIPTION": "panstrinkets:Quickdraw. NL Gain !B! Block."
@@ -86,15 +86,6 @@
 },"pansTrinkets:MirrorShield": {
   "NAME": "Mirror Shield",
   "DESCRIPTION": "Gain !B! Block. NL Gain !M! Artifact. NL Exhaust"
-},"pansTrinkets:SeedOfPurity": {
-  "NAME": "Seed Of Purity",
-  "DESCRIPTION": "Apply 2 Artifact to an enemy. NL When it loses all its Artifact, remove your debuffs and heal !M! HP. NL Exhaust."
-},"pansTrinkets:SeedOfCorruption": {
-  "NAME": "Seed Of Corruption",
-  "DESCRIPTION": "Apply 2 Artifact to an enemy. When it loses all its Artifact, apply !M! Vulnerable, Weak and Poison to ALL enemies NL Exhaust."
-},"pansTrinkets:Burdened": {
-  "NAME": "Burdened",
-  "DESCRIPTION": "panstrinkets:Large. NL Unplayable."
 },"pansTrinkets:ThePlan": {
   "NAME": "The Plan",
   "DESCRIPTION": "Draw !M! cards. They are Retained this turn."
