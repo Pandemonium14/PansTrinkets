@@ -20,7 +20,7 @@ public class OrnateMirror extends AbstractTrinket {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TRINKET_WHITE;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     public OrnateMirror() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
