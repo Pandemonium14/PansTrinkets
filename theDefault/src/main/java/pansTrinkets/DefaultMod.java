@@ -4,7 +4,6 @@ import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
-import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
@@ -27,7 +26,6 @@ import org.apache.logging.log4j.Logger;
 import pansTrinkets.cards.AbstractDefaultCard;
 import pansTrinkets.helpers.TrinketLibrary;
 import pansTrinkets.patches.TrinketRewardTypePatch;
-import pansTrinkets.relics.BottomlessBag;
 import pansTrinkets.rewards.LinkedCardReward;
 import pansTrinkets.rewards.TrinketReward;
 import pansTrinkets.util.IDCheckDontTouchPls;
@@ -91,7 +89,7 @@ public class DefaultMod implements
     // Mod-settings settings. This is if you want an on/off savable button
     public static Properties theDefaultDefaultSettings = new Properties();
     public static final String ENABLE_PLACEHOLDER_SETTINGS = "enablePlaceholder";
-    public static boolean enablePlaceholder = true; // The boolean we'll be setting on/off (true/false)
+    public static boolean unlinkTrinketRewards = true; // The boolean we'll be setting on/off (true/false)
 
     //This is for the in-game mod settings panel.
     private static final String MODNAME = "Pan's Trinkets";
@@ -183,7 +181,7 @@ public class DefaultMod implements
             SpireConfig config = new SpireConfig("defaultMod", "theDefaultConfig", theDefaultDefaultSettings); // ...right here
             // the "fileName" parameter is the name of the file MTS will create where it will save our setting.
             config.load(); // Load the setting and set the boolean to equal it
-            enablePlaceholder = config.getBool(ENABLE_PLACEHOLDER_SETTINGS);
+            unlinkTrinketRewards = config.getBool(ENABLE_PLACEHOLDER_SETTINGS);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -262,18 +260,18 @@ public class DefaultMod implements
         ModPanel settingsPanel = new ModPanel();
         
         // Create the on/off button:
-        ModLabeledToggleButton enableNormalsButton = new ModLabeledToggleButton("This is the text which goes next to the checkbox.",
+        ModLabeledToggleButton enableNormalsButton = new ModLabeledToggleButton("Unlink trinket rewards (makes it so you can pick the card reward AND a trinket)",
                 350.0f, 700.0f, Settings.CREAM_COLOR, FontHelper.charDescFont, // Position (trial and error it), color, font
-                enablePlaceholder, // Boolean it uses
+                unlinkTrinketRewards, // Boolean it uses
                 settingsPanel, // The mod panel in which this button will be in
                 (label) -> {}, // thing??????? idk
                 (button) -> { // The actual button:
             
-            enablePlaceholder = button.enabled; // The boolean true/false will be whether the button is enabled or not
+            unlinkTrinketRewards = button.enabled; // The boolean true/false will be whether the button is enabled or not
             try {
                 // And based on that boolean, set the settings and save them
                 SpireConfig config = new SpireConfig("defaultMod", "theDefaultConfig", theDefaultDefaultSettings);
-                config.setBool(ENABLE_PLACEHOLDER_SETTINGS, enablePlaceholder);
+                config.setBool(ENABLE_PLACEHOLDER_SETTINGS, unlinkTrinketRewards);
                 config.save();
             } catch (Exception e) {
                 e.printStackTrace();

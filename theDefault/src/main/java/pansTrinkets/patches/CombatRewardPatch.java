@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.screens.CombatRewardScreen;
 import com.megacrit.cardcrawl.ui.buttons.ProceedButton;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
+import pansTrinkets.DefaultMod;
 import pansTrinkets.helpers.TrinketHelper;
 import pansTrinkets.relics.BottomlessBag;
 import pansTrinkets.rewards.LinkedCardReward;
@@ -42,11 +43,15 @@ public class CombatRewardPatch {
                 if (!AbstractDungeon.player.hasRelic(BottomlessBag.ID)) {
                     TrinketHelper.maxWeight = TrinketHelper.baseMaxWeight;
                 }
-                __Instance.rewards.remove(reward);
-                TrinketReward trinkets = new TrinketReward(false);
-                LinkedCardReward cardReward = new LinkedCardReward(cards,trinkets);
-                __Instance.rewards.add(cardReward);
-                __Instance.rewards.add(trinkets);
+                if (!DefaultMod.unlinkTrinketRewards) {
+                    __Instance.rewards.remove(reward);
+                    TrinketReward trinkets = new TrinketReward(false);
+                    LinkedCardReward cardReward = new LinkedCardReward(cards,trinkets);
+                    __Instance.rewards.add(cardReward);
+                    __Instance.rewards.add(trinkets);
+                } else {
+                    __Instance.rewards.add(new TrinketReward(false));
+                }
             }
         }
     }

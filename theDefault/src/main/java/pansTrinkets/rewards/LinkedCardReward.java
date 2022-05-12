@@ -17,14 +17,13 @@ import static pansTrinkets.DefaultMod.getModID;
 public class LinkedCardReward extends CustomReward {
 
     private static final Texture ICON = new Texture(Gdx.files.internal(getModID() + "Resources/images/icon/cardReward.png"));
-    private final ArrayList<AbstractCard> cardChoices;
     public RewardItem linkedReward;
     public boolean isLinkedRewardTaken;
 
     public LinkedCardReward(ArrayList<AbstractCard> cards, TrinketReward reward) {
         super(ICON,"Add a card to your deck", TrinketRewardTypePatch.PANS_TRINKET_CARD_REWARD);
         linkedReward = reward;
-        cardChoices = cards;
+        this.cards = cards;
         isLinkedRewardTaken = false;
         if (reward != null) {
             reward.linkedReward = this;
@@ -36,7 +35,7 @@ public class LinkedCardReward extends CustomReward {
         if (linkedReward != null && isLinkedRewardTaken) {
             return true;
         }
-        AbstractDungeon.cardRewardScreen.open(cardChoices,this, "Add a card to your deck");
+        AbstractDungeon.cardRewardScreen.open(cards,this, "Add a card to your deck");
         AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.COMBAT_REWARD;
         return false;
     }

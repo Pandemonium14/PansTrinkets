@@ -22,7 +22,6 @@ import static pansTrinkets.DefaultMod.getModID;
 public class TrinketReward extends CustomReward {
     private static final Texture ICON = new Texture(Gdx.files.internal(getModID() + "Resources/images/icon/trinketReward.png"));
     private final boolean isRare;
-    public final ArrayList<AbstractCard> cardChoices;
     public RewardItem linkedReward;
     public boolean isLinkedRewardTaken;
 
@@ -30,7 +29,7 @@ public class TrinketReward extends CustomReward {
     public TrinketReward(boolean rare) {
         super(ICON,"Get a trinket", TrinketRewardTypePatch.PANS_TRINKET_TRINKET_REWARD);
         isRare = rare;
-        cardChoices = generateCardChoices();
+        cards = generateCardChoices();
         isLinkedRewardTaken = false;
     }
 
@@ -38,7 +37,7 @@ public class TrinketReward extends CustomReward {
         super(ICON,"Get a trinket", TrinketRewardTypePatch.PANS_TRINKET_TRINKET_REWARD);
         linkedReward = reward;
         isRare = rare;
-        cardChoices = choices;
+        cards = choices;
         isLinkedRewardTaken = false;
     }
 
@@ -48,7 +47,7 @@ public class TrinketReward extends CustomReward {
         if (linkedReward != null && isLinkedRewardTaken) {
             return true;
         }
-        AbstractDungeon.cardRewardScreen.open(cardChoices,this, "Choose one trinket.");
+        AbstractDungeon.cardRewardScreen.open(cards,this, "Choose one trinket.");
         AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.COMBAT_REWARD;
         return false;
     }
@@ -106,7 +105,7 @@ public class TrinketReward extends CustomReward {
     @Override
     public void render(SpriteBatch sb) {
         super.render(sb);
-        if (!isLinkedRewardTaken) {
+        if (!isLinkedRewardTaken && linkedReward != null) {
             renderLink(sb);
         }
     }

@@ -6,8 +6,8 @@
     <groupId>panstrinkets</groupId>
     <artifactId>PansTrinkets</artifactId>
     <name>Pan's Trinkets</name>
-    <version>0.0.1</version>
-    <description>A default base to start your own mod from.</description>
+    <version>0.1.1</version>
+    <description>Adds trinkets, a new kind of rewards.</description>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>

@@ -65,7 +65,7 @@
   "UPGRADE_DESCRIPTION": "Choose a random trinket to add to your hand. It is panstrinkets:Illusory and Upgraded."
 },"pansTrinkets:FangHammer": {
   "NAME": "Fang Hammer",
-  "DESCRIPTION": "Deal !D! damage. If Fatal, heal HP equal to unblocked damage dealt."
+  "DESCRIPTION": "Deal !D! damage. NL If Fatal, heal HP equal to unblocked damage dealt."
 },"pansTrinkets:CrystalBall": {
   "NAME": "Crystal Ball",
   "DESCRIPTION": "Innate. panstrinkets:Large. NL Scry your entire draw pile. Add !M! Dazed in your draw pile."
@@ -75,7 +75,7 @@
   "UPGRADE_DESCRIPTION": "Lose !M! Gold. Deal !D! damage. Permanently increase this card's damage and gold cost by 5."
 },"pansTrinkets:ShieldingTalisman": {
   "NAME": "Shielding Talisman",
-  "DESCRIPTION": "Shuffle !M! #yWards into your draw pile."
+  "DESCRIPTION": "Shuffle !M! *Wards into your draw pile."
 },"pansTrinkets:Guard": {
   "NAME": "Ward",
   "DESCRIPTION": "panstrinkets:Quickdraw. NL Gain !B! Block."
@@ -88,6 +88,15 @@
   "DESCRIPTION": "Gain !B! Block. NL Gain !M! Artifact. NL Exhaust"
 },"pansTrinkets:ThePlan": {
   "NAME": "The Plan",
-  "DESCRIPTION": "Draw !M! cards. They are Retained this turn."
+  "DESCRIPTION": "Draw !M! cards. NL They are Retained this turn."
+},"pansTrinkets:OrichalcumArmor": {
+  "NAME": "Orichalcum Armor",
+  "DESCRIPTION": "Gain !B! Block. NL If this card is in your deck, gain !M! Block at the end of your turn."
+},"pansTrinkets:DarkRuby": {
+  "NAME": "Dark Ruby",
+  "DESCRIPTION": "Enemy loses !M! Strength this turn. NL Add a Void to your discard pile."
+},"pansTrinkets:CorruptedIdol": {
+  "NAME": "Corrupted Idol",
+  "DESCRIPTION": "While this is in your deck, you have 20 more Max HP. NL Exhaust."
 }
 }
