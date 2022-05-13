@@ -2,6 +2,7 @@ package pansTrinkets.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
@@ -43,7 +44,7 @@ public class DarkRuby extends AbstractTrinket {
         if (!m.hasPower(ArtifactPower.POWER_ID)) {
             addToBot(new ApplyPowerAction(m, p, new GainStrengthPower(m, magicNumber)));
         }
-        addToBot(new MakeTempCardInDrawPileAction(new VoidCard(), 1, true, true));
+        addToBot(new MakeTempCardInDiscardAction(new VoidCard(), 1));
     }
 
     @Override

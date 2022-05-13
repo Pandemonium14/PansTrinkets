@@ -98,5 +98,8 @@
 },"pansTrinkets:CorruptedIdol": {
   "NAME": "Corrupted Idol",
   "DESCRIPTION": "While this is in your deck, you have 20 more Max HP. NL Exhaust."
+},"pansTrinkets:EchoChamber": {
+  "NAME": "Echo Chamber",
+  "DESCRIPTION": "Every 5th card played is played an additional time."
 }
 }
