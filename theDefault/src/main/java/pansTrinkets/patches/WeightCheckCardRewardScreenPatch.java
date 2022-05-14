@@ -16,7 +16,7 @@ public class WeightCheckCardRewardScreenPatch {
         AbstractCard card = ReflectionHacks.getPrivate(__Instance,CardRewardScreen.class, "touchCard");
         if (card != null && card.color.equals(EnumColorPatch.TRINKET_WHITE)) {
             AbstractTrinket trinket = (AbstractTrinket) card;
-            if (trinket.weight + TrinketHelper.carriedWeight(AbstractDungeon.player) > TrinketHelper.maxWeight) {
+            if (trinket.weight + TrinketHelper.carriedWeight(AbstractDungeon.player) > TrinketHelper.maxWeight && AbstractDungeon.previousScreen == AbstractDungeon.CurrentScreen.COMBAT_REWARD) {
                 ReflectionHacks.setPrivate(__Instance,CardRewardScreen.class, "touchCard", null);
             }
         }

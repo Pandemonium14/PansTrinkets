@@ -14,7 +14,7 @@ public class WeightCheckCardRewardScreenAgainPatch {
     public static void patch(CardRewardScreen __Instance, AbstractCard hoveredCard) {
         if (hoveredCard != null && hoveredCard.color.equals(EnumColorPatch.TRINKET_WHITE)) {
             AbstractTrinket trinket = (AbstractTrinket) hoveredCard;
-            if (trinket.weight + TrinketHelper.carriedWeight(AbstractDungeon.player) > TrinketHelper.maxWeight) {
+            if (trinket.weight + TrinketHelper.carriedWeight(AbstractDungeon.player) > TrinketHelper.maxWeight && AbstractDungeon.previousScreen == AbstractDungeon.CurrentScreen.COMBAT_REWARD) {
                 hoveredCard.hb.clicked = false;
             }
         }

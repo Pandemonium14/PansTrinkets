@@ -24,6 +24,6 @@ public class TrinketHelper {
 
     public static boolean shouldTrinketDrop() {
         int r = AbstractDungeon.treasureRng.random(99);
-        return r <= 10; // set here !!!!!!
+        return r <= 15; // set here !!!!!!
     }
 }

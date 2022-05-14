@@ -61,7 +61,7 @@ public class TrinketReward extends CustomReward {
             AbstractCard.CardRarity cardRarity;
             if (roll < 0) {// 65
                 cardRarity = AbstractCard.CardRarity.COMMON;// 66
-            } else if (roll < 80) {// 67
+            } else if (roll < 85) {// 67
                 cardRarity = AbstractCard.CardRarity.UNCOMMON;// 68
             } else {
                 cardRarity = AbstractCard.CardRarity.RARE;// 70
