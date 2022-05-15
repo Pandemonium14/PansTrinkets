@@ -28,7 +28,7 @@ import java.util.List;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 
-public abstract class AbstractTrinket extends AbstractDefaultCard implements CustomSavable<Integer> {
+public abstract class AbstractTrinket extends AbstractDefaultCard {
 
     public boolean quickDraw = false;
     public boolean hasDurability = false;
@@ -75,59 +75,16 @@ public abstract class AbstractTrinket extends AbstractDefaultCard implements Cus
         }
     }
 
-    public void use() {
-        if (hasDurability) {
-
-            AbstractTrinket c = (AbstractTrinket) StSLib.getMasterDeckEquivalent(this);
-
-            this.timesUsed += 1;
-            this.durability = this.baseDurability - timesUsed;
-
-            if (c!=null) {
-                c.timesUsed += 1;
-                c.durability = baseDurability - timesUsed;
-                if (c.durability == 0) {
-                    AbstractDungeon.player.masterDeck.removeCard(c);
-                }
-            }
-            if (willBreak) {
-                purgeOnUse = true;
-            }
-            if (durability == 1) {
-                willBreak = true;
-            }
-
-        }
-    }
 
     public void upgrade() {
-        durability = baseDurability - timesUsed;
     }
 
     public AbstractTrinket makeStatEquivalentCopy() {
         AbstractTrinket c = (AbstractTrinket) super.makeStatEquivalentCopy();
-        c.baseDurability = this.baseDurability;
-        c.timesUsed = this.timesUsed;
-        c.durability = c.baseDurability - c.timesUsed;
         c.weight = weight;
         return c;
     }
 
-    @Override
-    public Integer onSave() {
-        return timesUsed;
-    }
-
-    public void onLoad(Integer t) {
-        timesUsed = t;
-        durability = baseDurability - timesUsed;
-    }
-
-    @Override
-    public Type savedType()
-    {
-        return new TypeToken<Integer>(){}.getType();
-    }
 
 
     public int getWeight() {

@@ -24,6 +24,7 @@ import com.megacrit.cardcrawl.rewards.RewardSave;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import pansTrinkets.cards.AbstractDefaultCard;
+import pansTrinkets.helpers.TrinketHelper;
 import pansTrinkets.helpers.TrinketLibrary;
 import pansTrinkets.patches.TrinketRewardTypePatch;
 import pansTrinkets.rewards.LinkedCardReward;
@@ -88,8 +89,10 @@ public class DefaultMod implements
 
     // Mod-settings settings. This is if you want an on/off savable button
     public static Properties theDefaultDefaultSettings = new Properties();
-    public static final String ENABLE_PLACEHOLDER_SETTINGS = "enablePlaceholder";
+    public static final String UNLINK_TRINKETS = "unlinkTrinkets";
+    public static final String ENABLE_NEOW = "enableNeow";
     public static boolean unlinkTrinketRewards = true; // The boolean we'll be setting on/off (true/false)
+    public static boolean enableNeowOptions = true;
 
     //This is for the in-game mod settings panel.
     private static final String MODNAME = "Pan's Trinkets";
@@ -176,15 +179,17 @@ public class DefaultMod implements
         logger.info("Adding mod settings");
         // This loads the mod settings.
         // The actual mod Button is added below in receivePostInitialize()
-        theDefaultDefaultSettings.setProperty(ENABLE_PLACEHOLDER_SETTINGS, "FALSE"); // This is the default setting. It's actually set...
+        theDefaultDefaultSettings.setProperty(UNLINK_TRINKETS, "FALSE"); // This is the default setting. It's actually set...
+        theDefaultDefaultSettings.setProperty(ENABLE_NEOW, "FALSE");
         try {
             SpireConfig config = new SpireConfig("defaultMod", "theDefaultConfig", theDefaultDefaultSettings); // ...right here
-            // the "fileName" parameter is the name of the file MTS will create where it will save our setting.
-            config.load(); // Load the setting and set the boolean to equal it
-            unlinkTrinketRewards = config.getBool(ENABLE_PLACEHOLDER_SETTINGS);
+            config.load();
+            unlinkTrinketRewards = config.getBool(UNLINK_TRINKETS);
+            enableNeowOptions = config.getBool(ENABLE_NEOW);
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         logger.info("Done adding mod settings");
 
         addColor(TRINKET_WHITE,
@@ -260,7 +265,7 @@ public class DefaultMod implements
         ModPanel settingsPanel = new ModPanel();
         
         // Create the on/off button:
-        ModLabeledToggleButton enableNormalsButton = new ModLabeledToggleButton("Unlink trinket rewards (makes it so you can pick the card reward AND a trinket)",
+        ModLabeledToggleButton unlinkButton = new ModLabeledToggleButton("Unlink trinket rewards (makes it so you can pick the card reward AND a trinket)",
                 350.0f, 700.0f, Settings.CREAM_COLOR, FontHelper.charDescFont, // Position (trial and error it), color, font
                 unlinkTrinketRewards, // Boolean it uses
                 settingsPanel, // The mod panel in which this button will be in
@@ -271,14 +276,33 @@ public class DefaultMod implements
             try {
                 // And based on that boolean, set the settings and save them
                 SpireConfig config = new SpireConfig("defaultMod", "theDefaultConfig", theDefaultDefaultSettings);
-                config.setBool(ENABLE_PLACEHOLDER_SETTINGS, unlinkTrinketRewards);
+                config.setBool(UNLINK_TRINKETS, unlinkTrinketRewards);
                 config.save();
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
+
+        ModLabeledToggleButton enableNeowButton = new ModLabeledToggleButton("Enable trinket-related Neow options",
+                350.0f, 650.0f, Settings.CREAM_COLOR, FontHelper.charDescFont, // Position (trial and error it), color, font
+                enableNeowOptions, // Boolean it uses
+                settingsPanel, // The mod panel in which this button will be in
+                (label) -> {}, // thing??????? idk
+                (button) -> { // The actual button:
+
+                    enableNeowOptions = button.enabled; // The boolean true/false will be whether the button is enabled or not
+                    try {
+                        // And based on that boolean, set the settings and save them
+                        SpireConfig config = new SpireConfig("defaultMod", "theDefaultConfig", theDefaultDefaultSettings);
+                        config.setBool(ENABLE_NEOW, enableNeowOptions);
+                        config.save();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                });
         
-        settingsPanel.addUIElement(enableNormalsButton); // Add the button to the settings panel. Button is a go.
+        settingsPanel.addUIElement(unlinkButton); // Add the button to the settings panel. Button is a go.
+        settingsPanel.addUIElement(enableNeowButton);
         
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
 
@@ -287,6 +311,8 @@ public class DefaultMod implements
         BaseMod.addTopPanelItem(new TopPanelWeight());
 
         TrinketLibrary.makeLists();
+
+        BaseMod.addSaveField("MAX_WEIGHT", new TrinketHelper());
 
         BaseMod.registerCustomReward(
                 TrinketRewardTypePatch.PANS_TRINKET_TRINKET_REWARD,

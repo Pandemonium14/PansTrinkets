@@ -1,5 +1,6 @@
 package pansTrinkets.helpers;
 
+import basemod.abstracts.CustomSavable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -7,7 +8,7 @@ import pansTrinkets.cards.AbstractTrinket;
 
 import static pansTrinkets.patches.EnumColorPatch.TRINKET_WHITE;
 
-public class TrinketHelper {
+public class TrinketHelper implements CustomSavable<Integer> {
 
     public static int baseMaxWeight = 10;
     public static int maxWeight = baseMaxWeight;
@@ -25,5 +26,15 @@ public class TrinketHelper {
     public static boolean shouldTrinketDrop() {
         int r = AbstractDungeon.treasureRng.random(99);
         return r <= 15; // set here !!!!!!
+    }
+
+    @Override
+    public Integer onSave() {
+        return maxWeight;
+    }
+
+    @Override
+    public void onLoad(Integer integer) {
+        maxWeight = integer;
     }
 }

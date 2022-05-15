@@ -34,7 +34,6 @@ public class DimLantern extends AbstractTrinket {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(p, p, new EnergizedBluePower(p, magicNumber), magicNumber));
-        super.use();
     }
 
     public void upgrade() {

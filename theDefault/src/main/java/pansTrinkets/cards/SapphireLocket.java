@@ -39,7 +39,6 @@ public class SapphireLocket extends AbstractTrinket {
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new DrawPileToHandAction(this.magicNumber, CardType.POWER));
-        super.use();
     }
 
     public void upgrade() {

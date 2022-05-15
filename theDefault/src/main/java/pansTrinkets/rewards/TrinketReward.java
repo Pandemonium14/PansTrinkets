@@ -86,6 +86,29 @@ public class TrinketReward extends CustomReward {
         return derp;// 87
     }
 
+    public static ArrayList<AbstractCard> generateRareCardChoices() {
+        ArrayList derp = new ArrayList();// 57
+
+        while(derp.size() != 3) {// 60
+            boolean dupe = false;// 61
+            AbstractCard tmp = TrinketLibrary.getTrinket(AbstractCard.CardRarity.RARE);// 73
+            Iterator var6 = derp.iterator();// 75
+            while(var6.hasNext()) {
+                AbstractCard c = (AbstractCard)var6.next();
+                if (c.cardID.equals(tmp.cardID)) {// 76
+                    dupe = true;// 77
+                    break;// 78
+                }
+            }
+
+            if (!dupe) {// 82
+                derp.add(tmp.makeCopy());// 83
+            }
+        }
+
+        return derp;// 87
+    }
+
 
     @Override
     public void update() {

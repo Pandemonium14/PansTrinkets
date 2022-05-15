@@ -34,7 +34,6 @@ public class ExplosiveTrap extends AbstractTrinket {
     @Override
     public void use(AbstractPlayer p, AbstractMonster abstractMonster) {
         addToBot(new ApplyPowerAction(p,p,new ExplosiveTrapPower(p,p, this.magicNumber)));
-        super.use();
     }
 
     @Override

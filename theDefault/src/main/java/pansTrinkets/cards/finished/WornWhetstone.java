@@ -34,7 +34,6 @@ public class WornWhetstone extends AbstractTrinket {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p,p, new StrengthPower(p,this.magicNumber)));
-        super.use();
     }
 
     public void upgrade() {

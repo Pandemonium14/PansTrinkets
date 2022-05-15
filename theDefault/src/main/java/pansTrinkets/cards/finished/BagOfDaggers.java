@@ -34,7 +34,6 @@ public class BagOfDaggers extends AbstractTrinket {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot( new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        super.use();
     }
 
     public void upgrade() {

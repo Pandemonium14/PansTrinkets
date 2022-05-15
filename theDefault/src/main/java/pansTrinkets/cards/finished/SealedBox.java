@@ -35,7 +35,6 @@ public class SealedBox extends AbstractTrinket {
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         AbstractDungeon.effectList.add(new RainingGoldEffect(this.magicNumber * 2, true));
         this.addToBot(new GainGoldAction(this.magicNumber));
-        super.use();
     }
 
     public void upgrade() {

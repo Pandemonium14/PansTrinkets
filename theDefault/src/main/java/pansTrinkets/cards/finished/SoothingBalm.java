@@ -33,7 +33,6 @@ public class SoothingBalm extends AbstractTrinket {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new BalmAction(AbstractDungeon.player));
-        super.use();
     }
 
     public void upgrade() {
