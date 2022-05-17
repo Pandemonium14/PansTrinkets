@@ -25,13 +25,11 @@ public class AmorphousMatterAction extends AbstractGameAction {
     @Override
     public void update() {
         if (duration == Settings.ACTION_DUR_FAST) {
-            ArrayList<AbstractCard> trinkets = TrinketReward.generateCardChoices();
+            ArrayList<AbstractCard> trinkets = TrinketReward.generateCombatCardChoices();
 
             for (AbstractCard c : trinkets) {
-
-                ((AbstractTrinket)c).weight = 0;
-
                 if (upgraded) c.upgrade();
+                ((AbstractTrinket)c).weight = 0;
             }
 
             AbstractDungeon.cardRewardScreen.customCombatOpen(trinkets, "Choose a card to add to your hand.", true);

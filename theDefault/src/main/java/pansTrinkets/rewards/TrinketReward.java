@@ -109,6 +109,38 @@ public class TrinketReward extends CustomReward {
         return derp;// 87
     }
 
+    public static ArrayList<AbstractCard> generateCombatCardChoices() {
+        ArrayList<AbstractCard> cardOptions = new ArrayList();// 57
+
+        while(cardOptions.size() != 3) {// 60
+            boolean dupe = false;// 61
+            int roll = AbstractDungeon.cardRng.random(99);
+            AbstractCard.CardRarity cardRarity;
+            if (roll < 0) {// 65
+                cardRarity = AbstractCard.CardRarity.COMMON;// 66
+            } else if (roll < 85) {// 67
+                cardRarity = AbstractCard.CardRarity.UNCOMMON;// 68
+            } else {
+                cardRarity = AbstractCard.CardRarity.RARE;// 70
+            }
+
+            AbstractCard tmp = TrinketLibrary.getTrinket(cardRarity);
+
+            for (AbstractCard option : cardOptions) {
+                if (option.cardID.equals(tmp.cardID)) {// 76
+                    dupe = true;// 77
+                    break;// 78
+                }
+            }
+
+            if (!dupe && !tmp.tags.contains(AbstractCard.CardTags.HEALING)) {// 82
+                cardOptions.add(tmp.makeCopy());// 83
+            }
+        }
+
+        return cardOptions;// 87
+    }
+
 
     @Override
     public void update() {

@@ -31,6 +31,7 @@ public class FangHammer extends AbstractTrinket {
         this.baseDamage = 14;
         this.weight = 4;
 
+        tags.add(CardTags.HEALING);
         availableFor.add(AbstractPlayer.PlayerClass.IRONCLAD);
         availableFor.add(AbstractPlayer.PlayerClass.THE_SILENT);
         availableFor.add(AbstractPlayer.PlayerClass.DEFECT);

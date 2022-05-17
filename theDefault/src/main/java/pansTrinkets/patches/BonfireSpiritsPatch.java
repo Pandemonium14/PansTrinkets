@@ -28,7 +28,7 @@ public class BonfireSpiritsPatch {
     public static SpireReturn<Void> patch(Bonfire __instance, AbstractCard ___offeredCard, boolean ___cardSelect) {
         if (___offeredCard.color == TRINKET_WHITE) {
             switch (___offeredCard.rarity) {
-                case UNCOMMON:
+            case UNCOMMON:
                     TrinketHelper.maxWeight += 3;
                     break;
                 case RARE:

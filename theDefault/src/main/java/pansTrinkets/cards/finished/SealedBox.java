@@ -29,6 +29,7 @@ public class SealedBox extends AbstractTrinket {
         magicNumber = baseMagicNumber = 50;
         weight = 1;
         FleetingField.fleeting.set(this, true);
+        tags.add(CardTags.HEALING);
     }
 
     @Override

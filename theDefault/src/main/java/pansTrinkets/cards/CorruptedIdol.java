@@ -30,6 +30,7 @@ public class CorruptedIdol extends AbstractTrinket {
         this.weight = 1;
         this.cardStrings = languagePack.getCardStrings(ID);
         exhaust = true;
+        tags.add(CardTags.HEALING);
     }
 
     @Override

@@ -101,5 +101,8 @@
 },"pansTrinkets:EchoChamber": {
   "NAME": "Echo Chamber",
   "DESCRIPTION": "Every 5th card played is played an additional time."
+},"pansTrinkets:ShardOfMadness": {
+  "NAME": "Shard of Madness",
+  "DESCRIPTION": "Permanently reduce the cost of a card in hand to 0. NL Lose !M! Max Weight. NL Remove this card from your deck."
 }
 }
