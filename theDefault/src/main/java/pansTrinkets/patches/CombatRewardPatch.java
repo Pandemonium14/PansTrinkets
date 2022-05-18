@@ -41,7 +41,7 @@ public class CombatRewardPatch {
 
             if (makeTrinket) {
                 if (!AbstractDungeon.player.hasRelic(BottomlessBag.ID)) {
-                    TrinketHelper.maxWeight = TrinketHelper.baseMaxWeight;
+                    TrinketHelper.maxWeight = TrinketHelper.BASE_MAX_WEIGHT;
                 }
                 if (!DefaultMod.unlinkTrinketRewards) {
                     __Instance.rewards.remove(reward);

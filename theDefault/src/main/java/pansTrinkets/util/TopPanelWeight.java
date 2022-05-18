@@ -52,7 +52,7 @@ public class TopPanelWeight extends TopPanelItem {
     }
 
     private String assembleString() {
-        return "Every trinket has a weight. You can only add trinkets to your deck with a total weight lower than your maximum weight.";
+        return "Every trinket has a weight. You can only add trinkets to your deck with a total weight lower than your maximum weight. You gain 1 Max Weight for every two cards you add to your deck.";
     }
 
 

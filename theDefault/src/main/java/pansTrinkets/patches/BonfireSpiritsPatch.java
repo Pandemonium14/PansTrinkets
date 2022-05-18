@@ -29,10 +29,10 @@ public class BonfireSpiritsPatch {
         if (___offeredCard.color == TRINKET_WHITE) {
             switch (___offeredCard.rarity) {
             case UNCOMMON:
-                    TrinketHelper.maxWeight += 3;
+                    TrinketHelper.changeMaxWeight(4);
                     break;
                 case RARE:
-                    TrinketHelper.maxWeight += 6;
+                    TrinketHelper.changeMaxWeight(8);
             }
             AbstractDungeon.topLevelEffects.add(new PurgeCardEffect(___offeredCard, (float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2)));// 82
             AbstractDungeon.player.masterDeck.removeCard(___offeredCard);

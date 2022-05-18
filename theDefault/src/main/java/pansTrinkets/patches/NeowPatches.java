@@ -78,15 +78,15 @@ public class NeowPatches {
         @SpirePrefixPatch
         public static void patch(NeowReward __instance) {
             if(__instance.drawback == LOSE_MAX_WEIGHT) {
-                TrinketHelper.maxWeight -= 2;
+                TrinketHelper.changeMaxWeight(-2);
             }
 
             if (__instance.type == CHOOSE_TRINKET) {
                 AbstractDungeon.cardRewardScreen.open(TrinketReward.generateCardChoices(),null,"Choose a trinket");
             } else if (__instance.type == MAX_WEIGHT_SMALL) {
-                TrinketHelper.maxWeight += 2;
+                TrinketHelper.changeMaxWeight(2);
             } else if (__instance.type == MAX_WEIGHT_BIG) {
-                TrinketHelper.maxWeight += 4;
+                TrinketHelper.changeMaxWeight(4);
             } else if (__instance.type == CHOOSE_RARE_TRINKET) {
                 AbstractDungeon.cardRewardScreen.open(TrinketReward.generateRareCardChoices(),null,"Choose a trinket");
             }

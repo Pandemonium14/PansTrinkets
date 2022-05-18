@@ -130,7 +130,7 @@ public abstract class AbstractTrinket extends AbstractDefaultCard {
     public List<TooltipInfo> getCustomTooltips() {
         List<TooltipInfo> tips = new ArrayList<TooltipInfo>();
         if (weight > 0) {
-            tips.add(new TooltipInfo("[pansTrinkets:WeightIcon] Weight", "You can only carry trinkets of a total weight lower than 10."));
+            tips.add(new TooltipInfo("[pansTrinkets:WeightIcon] Weight", "You can only carry trinkets of a total weight lower than your Max Weight. You gain #y1 Max Weight for every two cards you add to your deck."));
         }
         return tips;
     }

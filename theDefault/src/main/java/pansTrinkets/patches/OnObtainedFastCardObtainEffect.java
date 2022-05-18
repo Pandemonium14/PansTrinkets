@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.vfx.FastCardObtainEffect;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
 import pansTrinkets.cards.AbstractTrinket;
+import pansTrinkets.helpers.TrinketHelper;
 
 import java.util.ArrayList;
 
@@ -20,7 +21,7 @@ public class OnObtainedFastCardObtainEffect {
         if (___card instanceof AbstractTrinket) {
             ((AbstractTrinket)___card).onAddedToMasterDeck();
         }
-
+        TrinketHelper.onCardObtain(___card);
     }
 
     public static class Locator extends SpireInsertLocator {
