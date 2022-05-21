@@ -4,6 +4,7 @@ import basemod.abstracts.CustomSavable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import pansTrinkets.DefaultMod;
 import pansTrinkets.cards.AbstractTrinket;
 
 import static pansTrinkets.patches.EnumColorPatch.TRINKET_WHITE;
@@ -49,10 +50,16 @@ public class TrinketHelper implements CustomSavable<Float> {
     public void onLoad(Float saved) {
         maxWeightF = saved;
         maxWeight = maxWeightF.intValue();
+        if (!DefaultMod.enableProgressiveMaxWeight) {
+            maxWeight = 10;
+            maxWeightF = 10F;
+        }
     }
 
     public static void onCardObtain(AbstractCard c) {
-        maxWeightF += 0.5f;
-        maxWeight = maxWeightF.intValue();
+        if (DefaultMod.enableProgressiveMaxWeight) {
+            maxWeightF += 0.5f;
+            maxWeight = maxWeightF.intValue();
+        }
     }
 }

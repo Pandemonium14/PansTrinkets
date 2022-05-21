@@ -2,16 +2,18 @@ package pansTrinkets.cards;
 
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pansTrinkets.DefaultMod;
+import pansTrinkets.util.OnObtainedCard;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static pansTrinkets.DefaultMod.makeCardPath;
 import static pansTrinkets.patches.EnumColorPatch.TRINKET_WHITE;
 
-public class CorruptedIdol extends AbstractTrinket {
+public class CorruptedIdol extends AbstractTrinket implements OnObtainedCard {
 
     public static final String ID = DefaultMod.makeID(CorruptedIdol.class.getSimpleName());
     public static final String IMG = makeCardPath("CorruptedIdol.png");
@@ -34,7 +36,7 @@ public class CorruptedIdol extends AbstractTrinket {
     }
 
     @Override
-    public void onAddedToMasterDeck() {
+    public void onObtained() {
         AbstractDungeon.player.increaseMaxHp(20, false);
     }
 
@@ -59,4 +61,5 @@ public class CorruptedIdol extends AbstractTrinket {
             upgradeBaseCost(0);
         }
     }
+
 }

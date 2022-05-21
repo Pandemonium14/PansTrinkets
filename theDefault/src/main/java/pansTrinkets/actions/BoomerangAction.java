@@ -15,36 +15,26 @@ import pansTrinkets.powers.BoomerangPower;
 
 public class BoomerangAction extends AbstractGameAction {
 
-    private boolean waiting;
-    private AbstractCard card;
 
-    public BoomerangAction(AbstractCard c, boolean waiting) {
-        this.card = c;
-        this.waiting = waiting;
-    }
+    private final AbstractCard card;
+
 
     public BoomerangAction(AbstractCard c) {
         this.card = c;
-        this.waiting = false;
     }
 
     @Override
     public void update() {
-        if (waiting) {
-            addToBot(new BoomerangAction(card, false));
-            this.isDone = true;
-        } else {
-            AbstractPlayer p = AbstractDungeon.player;
-            if (p.discardPile.group.contains(card)) {
-                p.discardPile.moveToHand(card);
-            } else if (p.exhaustPile.group.contains(card)) {
-                p.exhaustPile.moveToHand(card);
-            } else if (p.drawPile.contains(card)) {
-                p.drawPile.moveToHand(card);
-            } else if (StSLib.getMasterDeckEquivalent(card)!=null) {
-                addToBot(new MakeTempCardInHandAction(card.makeStatEquivalentCopy()));
-            }
-            this.isDone = true;
+        AbstractPlayer p = AbstractDungeon.player;
+        if (p.discardPile.group.contains(card)) {
+            p.discardPile.moveToHand(card);
+        } else if (p.exhaustPile.group.contains(card)) {
+            p.exhaustPile.moveToHand(card);
+        } else if (p.drawPile.contains(card)) {
+            p.drawPile.moveToHand(card);
+        } else if (StSLib.getMasterDeckEquivalent(card)!=null) {
+            addToBot(new MakeTempCardInHandAction(card.makeStatEquivalentCopy()));
         }
+        this.isDone = true;
     }
 }

@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import pansTrinkets.DefaultMod;
 import pansTrinkets.actions.BoomerangAction;
+import pansTrinkets.actions.WaitWithFollowUpAction;
 import pansTrinkets.util.TextureLoader;
 
 import static pansTrinkets.DefaultMod.makePowerPath;
@@ -52,7 +53,7 @@ public class BoomerangPower extends TrinketPower {
     @Override
     public void onAfterUseCard(AbstractCard c, UseCardAction action) {
         if (addBack && c.type != AbstractCard.CardType.POWER && !c.exhaust && !c.purgeOnUse) {
-            addToBot(new BoomerangAction(c));
+            addToBot(new WaitWithFollowUpAction(new BoomerangAction(c)));
             addToBot(new ReducePowerAction(owner, owner, BoomerangPower.POWER_ID, 1));
         } else {
             addBack = true;

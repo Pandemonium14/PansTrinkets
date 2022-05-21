@@ -14,16 +14,20 @@ import com.evacipated.cardcrawl.mod.stslib.icons.CustomIconHelper;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rewards.RewardSave;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import pansTrinkets.cards.AbstractDefaultCard;
+import pansTrinkets.cards.UnboundFury;
 import pansTrinkets.helpers.TrinketHelper;
 import pansTrinkets.helpers.TrinketLibrary;
 import pansTrinkets.patches.TrinketRewardTypePatch;
@@ -91,8 +95,10 @@ public class DefaultMod implements
     public static Properties theDefaultDefaultSettings = new Properties();
     public static final String UNLINK_TRINKETS = "unlinkTrinkets";
     public static final String ENABLE_NEOW = "enableNeow";
+    public static final String ENABLE_PROGRESSIVE_MAX_WEIGHT = "enableProgressiveMaxWeight";
     public static boolean unlinkTrinketRewards = true; // The boolean we'll be setting on/off (true/false)
     public static boolean enableNeowOptions = true;
+    public static boolean enableProgressiveMaxWeight = true;
 
     //This is for the in-game mod settings panel.
     private static final String MODNAME = "Pan's Trinkets";
@@ -181,11 +187,13 @@ public class DefaultMod implements
         // The actual mod Button is added below in receivePostInitialize()
         theDefaultDefaultSettings.setProperty(UNLINK_TRINKETS, "FALSE"); // This is the default setting. It's actually set...
         theDefaultDefaultSettings.setProperty(ENABLE_NEOW, "FALSE");
+        theDefaultDefaultSettings.setProperty(ENABLE_PROGRESSIVE_MAX_WEIGHT, "TRUE");
         try {
             SpireConfig config = new SpireConfig("defaultMod", "theDefaultConfig", theDefaultDefaultSettings); // ...right here
             config.load();
             unlinkTrinketRewards = config.getBool(UNLINK_TRINKETS);
             enableNeowOptions = config.getBool(ENABLE_NEOW);
+            enableProgressiveMaxWeight = config.getBool(ENABLE_PROGRESSIVE_MAX_WEIGHT);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -300,9 +308,28 @@ public class DefaultMod implements
                         e.printStackTrace();
                     }
                 });
+
+        ModLabeledToggleButton enableMaxWeightButton = new ModLabeledToggleButton("Enable gaining max weight by obtaining cards. Also changes the base Max Weight.",
+                350.0f, 600.0f, Settings.CREAM_COLOR, FontHelper.charDescFont, // Position (trial and error it), color, font
+                enableProgressiveMaxWeight, // Boolean it uses
+                settingsPanel, // The mod panel in which this button will be in
+                (label) -> {}, // thing??????? idk
+                (button) -> { // The actual button:
+
+                    enableProgressiveMaxWeight = button.enabled; // The boolean true/false will be whether the button is enabled or not
+                    try {
+                        // And based on that boolean, set the settings and save them
+                        SpireConfig config = new SpireConfig("defaultMod", "theDefaultConfig", theDefaultDefaultSettings);
+                        config.setBool(ENABLE_PROGRESSIVE_MAX_WEIGHT, enableProgressiveMaxWeight);
+                        config.save();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                });
         
         settingsPanel.addUIElement(unlinkButton); // Add the button to the settings panel. Button is a go.
         settingsPanel.addUIElement(enableNeowButton);
+        settingsPanel.addUIElement(enableMaxWeightButton);
         
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
 
@@ -324,14 +351,21 @@ public class DefaultMod implements
                             cardReward = r;
                         }
                     }
-                    if (cardReward != null) {
-                        rewards.remove(cardReward);
+                    if (!unlinkTrinketRewards) {
                         TrinketReward trinketReward = new TrinketReward(false);
-                        LinkedCardReward linkedReward = new LinkedCardReward(cardReward.cards, trinketReward);
-                        rewards.add(linkedReward);
-                        rewards.add(trinketReward);
+                        if (cardReward != null) {
+                            rewards.remove(cardReward);
+                            LinkedCardReward linkedReward = new LinkedCardReward(cardReward.cards, trinketReward);
+                            rewards.add(linkedReward);
+                            rewards.add(trinketReward);
+                        }
+                        return trinketReward;
+                    } else {
+                        TrinketReward reward = new TrinketReward(false);
+                        rewards.add(reward);
+                        return reward;
                     }
-                    return new TrinketReward(false);
+
                 },
                 (customReward) -> { // this handles what to do when this quest type is saved.
                     return new RewardSave(customReward.type.toString(), null);
@@ -448,5 +482,12 @@ public class DefaultMod implements
     @Override
     public void receiveStartGame() {
         TrinketLibrary.makeCharacterLists(AbstractDungeon.player.chosenClass);
+        if (!enableProgressiveMaxWeight) {
+            TrinketHelper.maxWeight = 10;
+            TrinketHelper.maxWeightF = 10.0F;
+        }
     }
+
+
+
 }

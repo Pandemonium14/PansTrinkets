@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import pansTrinkets.cardmods.IllusoryModifier;
 import pansTrinkets.cards.AbstractTrinket;
+import pansTrinkets.cards.UnboundFury;
 import pansTrinkets.rewards.TrinketReward;
 
 import java.util.ArrayList;

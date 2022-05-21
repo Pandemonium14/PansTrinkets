@@ -139,6 +139,4 @@ public abstract class AbstractTrinket extends AbstractDefaultCard {
         FontHelper.cardEnergyFont_L.getData().setScale(card.drawScale * 0.75f);
         return FontHelper.cardEnergyFont_L;
     }
-
-    public void onAddedToMasterDeck() {}
 }
