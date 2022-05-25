@@ -2,6 +2,7 @@ package pansTrinkets.actions;
 
 import com.evacipated.cardcrawl.mod.stslib.actions.common.FetchAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.utility.DrawPileToHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -25,29 +26,35 @@ public class LodestoneDrawPileAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        if (duration == startDuration) {
+        if (duration == Settings.ACTION_DUR_FAST) {
             CardGroup tmp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
 
             for (AbstractCard c : p.drawPile.group) {
                 tmp.addToRandomSpot(c);
             }
-
+            if (tmp.size() == 0) {
+                addToBot(new MakeTempCardInDrawPileAction(new SpentLodestone(),1,true, true));
+                isDone = true;
+                return;
+            }
             if (tmp.size() == 1) {
                 AbstractCard card = tmp.getTopCard();
-                p.drawPile.addToHand(card);
                 p.drawPile.addToTop(cardToSwap);
+                p.drawPile.removeCard(card);
+                p.hand.group.add(card);
                 p.hand.refreshHandLayout();
                 isDone = true;
+                return;
             } else {
                 AbstractDungeon.gridSelectScreen.open(tmp,1, false,"Choose a card to add to your hand.");
+                tickDuration();
             }
-            tickDuration();
         }
         if (AbstractDungeon.gridSelectScreen.selectedCards.size() != 0) {
             AbstractCard card = AbstractDungeon.gridSelectScreen.selectedCards.get(0);
             int index = p.drawPile.group.indexOf(card);
             p.drawPile.group.set(index, cardToSwap);
-            p.drawPile.moveToHand(card);
+            p.hand.group.add(card);
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             isDone = true;
         }

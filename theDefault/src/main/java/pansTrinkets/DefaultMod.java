@@ -481,6 +481,8 @@ public class DefaultMod implements
 
     @Override
     public void receiveStartGame() {
+        TrinketHelper.maxWeight = TrinketHelper.BASE_MAX_WEIGHT;
+        TrinketHelper.maxWeightF = TrinketHelper.maxWeight + 0.0F;
         TrinketLibrary.makeCharacterLists(AbstractDungeon.player.chosenClass);
         if (!enableProgressiveMaxWeight) {
             TrinketHelper.maxWeight = 10;

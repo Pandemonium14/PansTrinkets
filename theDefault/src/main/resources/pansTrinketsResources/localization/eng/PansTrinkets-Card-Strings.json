@@ -6,13 +6,12 @@
 },
   "pansTrinkets:BagOfDaggers": {
   "NAME": "Bag Of Daggers",
-  "DESCRIPTION": " panstrinkets:Quickdraw. NL Deal !D! damage. NL Return this card to your draw pile.",
-  "UPGRADE_DESCRIPTION":"panstrinkets:Quickdraw. Retain. NL Exhaust all status cards in your hand, draw pile and discard pile."
+  "DESCRIPTION": " panstrinkets:Quickdraw. NL Deal !D! damage. NL Return this card to your draw pile."
 },
   "pansTrinkets:SoothingBalm": {
     "NAME": "Soothing Balm",
     "DESCRIPTION": "panstrinkets:Quickdraw. NL Exhaust ALL your Status cards.",
-    "UPGRADE_DESCRIPTION" : "Retain. NL panstrinkets:Quickdraw. NL Exhaust ALL your status cards."
+    "UPGRADE_DESCRIPTION": "Retain. panstrinkets:Quickdraw. NL Exhaust ALL your Status cards."
 },
   "pansTrinkets:WornWhetstone": {
     "NAME": "Worn Whetstone",
@@ -26,8 +25,7 @@
   "pansTrinkets:GoldenFeather": {
     "NAME": "Golden Feather",
     "DESCRIPTION": "Upgrade all cards in your draw pile OR your discard pile for the rest of combat. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Upgrade all cards in your hand, and in your draw pile OR your discard pile for the rest of combat. NL Exhaust."
-  },
+    "UPGRADE_DESCRIPTION": "Upgrade all cards in your hand, and in your draw pile OR your discard pile for the rest of combat. NL Exhaust."},
   "pansTrinkets:FromBelow": {
     "NAME": "From Below",
     "DESCRIPTION": "Upgrade all cards in your discard pile for the rest of combat."
@@ -66,10 +64,8 @@
 },"pansTrinkets:FangHammer": {
   "NAME": "Fang Hammer",
   "DESCRIPTION": "Deal !D! damage. NL If Fatal, heal HP equal to unblocked damage dealt."
-},"pansTrinkets:CrystalBall": {
-  "NAME": "Crystal Ball",
-  "DESCRIPTION": "Innate. panstrinkets:Large. NL Scry your entire draw pile. Add !M! Dazed in your draw pile."
-},"pansTrinkets:HungryCoin": {
+}
+,"pansTrinkets:HungryCoin": {
   "NAME": "Hungry Coin",
   "DESCRIPTION": "Lose !M! Gold. Deal !D! damage. Permanently increase this card's damage and gold cost by 3.",
   "UPGRADE_DESCRIPTION": "Lose !M! Gold. Deal !D! damage. Permanently increase this card's damage and gold cost by 5."

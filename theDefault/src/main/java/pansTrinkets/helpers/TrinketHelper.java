@@ -12,8 +12,8 @@ import static pansTrinkets.patches.EnumColorPatch.TRINKET_WHITE;
 public class TrinketHelper implements CustomSavable<Float> {
 
     public static final int BASE_MAX_WEIGHT = 5;
-    public static int maxWeight = BASE_MAX_WEIGHT;
-    public static Float maxWeightF = maxWeight + 0.0F ;
+    public static int maxWeight;
+    public static Float maxWeightF;
 
 
     public static int carriedWeight(AbstractPlayer p) {
@@ -58,8 +58,7 @@ public class TrinketHelper implements CustomSavable<Float> {
 
     public static void onCardObtain(AbstractCard c) {
         if (DefaultMod.enableProgressiveMaxWeight) {
-            maxWeightF += 0.5f;
-            maxWeight = maxWeightF.intValue();
+            changeMaxWeight(0.5F);
         }
     }
 }

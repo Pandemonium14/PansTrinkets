@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.evacipated.cardcrawl.mod.stslib.StSLib;
+import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -43,6 +44,8 @@ public abstract class AbstractTrinket extends AbstractDefaultCard {
     public CardStrings cardStrings;
     public ArrayList<AbstractPlayer.PlayerClass> availableFor = new ArrayList<>();
 
+
+
     public static final Texture WEIGHT_ICON = ImageMaster.loadImage("pansTrinketsResources/images/icon/WeightIcon.png");
 
     @Override
@@ -59,7 +62,9 @@ public abstract class AbstractTrinket extends AbstractDefaultCard {
                            final CardTarget target) {
 
         super(id, languagePack.getCardStrings(id).NAME, img, cost, languagePack.getCardStrings(id).DESCRIPTION, type, color, rarity, target);
-
+        FlavorText.AbstractCardFlavorFields.boxColor.set(this, Color.LIGHT_GRAY);
+        FlavorText.AbstractCardFlavorFields.flavorBoxType.set(this, FlavorText.boxType.WHITE);
+        FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.DARK_GRAY);
     }
     public void pansAfterCardUse(AbstractCard c){
     }
