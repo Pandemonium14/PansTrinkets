@@ -27,7 +27,6 @@ public class SapphireLocket extends AbstractTrinket {
 
     public SapphireLocket() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.quickDraw = true;
         this.isEthereal = true;
         this.isInnate = true;
         this.exhaust = true;

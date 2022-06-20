@@ -15,9 +15,10 @@ public class LodestoneDrawPileAction extends AbstractGameAction {
 
     private AbstractPlayer p = AbstractDungeon.player;
     private AbstractCard cardToSwap;
+    private boolean upgraded;
 
 
-    public LodestoneDrawPileAction(AbstractCard c) {
+    public LodestoneDrawPileAction(AbstractCard c, boolean upgraded) {
         actionType = ActionType.CARD_MANIPULATION;
         duration = Settings.ACTION_DUR_FAST;
         cardToSwap = c;
@@ -33,7 +34,7 @@ public class LodestoneDrawPileAction extends AbstractGameAction {
                 tmp.addToRandomSpot(c);
             }
             if (tmp.size() == 0) {
-                addToBot(new MakeTempCardInDrawPileAction(new SpentLodestone(),1,true, true));
+                addToBot(new MakeTempCardInDrawPileAction(cardToSwap,1,true, true));
                 isDone = true;
                 return;
             }

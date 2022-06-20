@@ -1,5 +1,6 @@
 package pansTrinkets.cards;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -45,12 +46,15 @@ public class Lodestone extends AbstractTrinket {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            weight -= 2;
+            if (cardsToPreview != null) cardsToPreview.upgrade();
+            this.initializeDescription();
         }
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new LodestoneDrawPileAction(new SpentLodestone()));
+        AbstractCard c = new SpentLodestone();
+        if (upgraded) c.upgrade();
+        addToBot(new LodestoneDrawPileAction(c, upgraded));
     }
 }

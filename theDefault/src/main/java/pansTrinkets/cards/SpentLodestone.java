@@ -1,5 +1,6 @@
 package pansTrinkets.cards;
 
+import com.megacrit.cardcrawl.actions.common.BetterDiscardPileToHandAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.defect.DiscardPileToHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -46,15 +47,17 @@ public class SpentLodestone extends AbstractTrinket {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            weight -= 2;
+            this.initializeDescription();
         }
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DiscardPileToHandAction(1));
-        AbstractTrinket c = new Lodestone();
-        c.weight = 0;
-        addToBot(new MakeTempCardInDiscardAction(c,1));
+        addToBot(new BetterDiscardPileToHandAction(1));
+        if (upgraded) {
+            AbstractTrinket c = new Lodestone();
+            c.weight = 0;
+            addToBot(new MakeTempCardInDiscardAction(c, 1));
+        }
     }
 }

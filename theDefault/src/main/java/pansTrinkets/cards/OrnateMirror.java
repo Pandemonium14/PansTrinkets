@@ -25,7 +25,7 @@ public class OrnateMirror extends AbstractTrinket {
     public OrnateMirror() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 1;
-        this.weight = 4;
+        this.weight = 3;
         this.exhaust = true;
         this.cardStrings = languagePack.getCardStrings(ID);
     }

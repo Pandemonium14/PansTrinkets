@@ -102,10 +102,10 @@
   "DESCRIPTION": "Permanently reduce the cost of a card in hand to 0. NL Lose !M! Max Weight. NL Remove this card from your deck."
 },"pansTrinkets:Lodestone": {
   "NAME": "Lodestone",
-  "DESCRIPTION": "Put a card from your draw pile into your hand. NL Put a *Spent *Lodestone in its place. NL Exhaust."
+  "DESCRIPTION": "{@@}Put a card from your draw pile into your hand. NL Put a *Spent *Lodestone{!Upgrades!|1=+} in its place. NL Exhaust."
 },"pansTrinkets:SpentLodestone": {
   "NAME": "Spent Lodestone",
-  "DESCRIPTION": "Put a card from your discard pile into your hand. NL Put a *Lodestone in its place. NL Exhaust."
+  "DESCRIPTION": "{@@}Put a card from your discard pile into your hand.{!Upgrades!|1= NL Put a *Lodestone in its place.} NL Exhaust."
 },"pansTrinkets:SymbolOfFury": {
   "NAME": "Symbol of Fury",
   "DESCRIPTION": "{@@}Ethereal. NL Shuffle an *Unbound *Fury{!Upgrades!|1=+} into your draw pile. NL Exhaust."
