@@ -35,8 +35,8 @@ public class OrnateMirrorAction extends AbstractGameAction {
                 for (AbstractCard C : p.hand.group) {
 
                     AbstractCard newCard = C.makeStatEquivalentCopy();
-                    if (makeZeroCost) {
-                        newCard.costForTurn = 0;
+                    if (makeZeroCost && newCard.cost >= 1) {
+                        newCard.costForTurn = newCard.cost - 1;
                     }
                     addToBot(new MakeTempCardInHandAction(newCard));
 

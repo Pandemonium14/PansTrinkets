@@ -19,16 +19,12 @@
         "NAME": "Boomerang",
         "DESCRIPTIONS": ["The next card played is added back to your hand.","The next #b"," cards played will be added back to your hand."]
 },
-"pansTrinkets:SeedOfPurityPower": {
-        "NAME": "Seed Of Purity",
-        "DESCRIPTIONS": ["When this enemy loses all its #yArtifact, remove all your debuffs and heal #b1 HP.","When this enemy loses all its #yArtifact, remove all your debuffs and heal #y"," HP."]
-},
-"pansTrinkets:SeedOfCorruptionPower": {
-        "NAME": "Seed Of Corruption",
-        "DESCRIPTIONS": ["When this enemy loses all its #yArtifact, apply #yWeak, #yVulnerable and #yPoison to ALL enemies.","When this enemy loses all its #yArtifact, apply #b"," #yWeak, #yVulnerable and #yPoison to ALL enemies."]
-},
 "pansTrinkets:EchoChamberPower": {
         "NAME": "Echo Chamber",
         "DESCRIPTIONS": ["Every 5th card you play is played #b"," times."]
-}
+},
+        "pansTrinkets:SuperconductivePower": {
+                "NAME": "Superconductive",
+                "DESCRIPTIONS": ["At the end of your turn, #yChannel #b"," #yLightning and #yChannel #b"," #yFrost if you don't have any."]
+        }
 }

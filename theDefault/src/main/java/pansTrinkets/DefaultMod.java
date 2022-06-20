@@ -85,6 +85,7 @@ public class DefaultMod implements
         EditKeywordsSubscriber,
         PostInitializeSubscriber,
         EditCardsSubscriber,
+        PreStartGameSubscriber,
         StartGameSubscriber {
     // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
     // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
@@ -480,10 +481,9 @@ public class DefaultMod implements
     }
 
     @Override
-    public void receiveStartGame() {
+    public void receivePreStartGame() {
         TrinketHelper.maxWeight = TrinketHelper.BASE_MAX_WEIGHT;
         TrinketHelper.maxWeightF = TrinketHelper.maxWeight + 0.0F;
-        TrinketLibrary.makeCharacterLists(AbstractDungeon.player.chosenClass);
         if (!enableProgressiveMaxWeight) {
             TrinketHelper.maxWeight = 10;
             TrinketHelper.maxWeightF = 10.0F;
@@ -491,5 +491,8 @@ public class DefaultMod implements
     }
 
 
-
+    @Override
+    public void receiveStartGame() {
+        TrinketLibrary.makeCharacterLists(AbstractDungeon.player.chosenClass);
+    }
 }

@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
 import pansTrinkets.DefaultMod;
 import pansTrinkets.cards.AbstractTrinket;
+import pansTrinkets.helpers.TrinketHelper;
 
 import static pansTrinkets.DefaultMod.makeCardPath;
 import static pansTrinkets.patches.EnumColorPatch.TRINKET_WHITE;
@@ -23,19 +24,28 @@ public class SealedBox extends AbstractTrinket {
     public static final CardColor COLOR = TRINKET_WHITE;
 
     private static final int COST = 2;
+    private int maxWeightCost = 2;
 
     public SealedBox() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 50;
-        weight = 1;
+        magicNumber = baseMagicNumber = 75;
+        weight = 2;
         FleetingField.fleeting.set(this, true);
         tags.add(CardTags.HEALING);
     }
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        AbstractDungeon.effectList.add(new RainingGoldEffect(this.magicNumber * 2, true));
-        this.addToBot(new GainGoldAction(this.magicNumber));
+        if (TrinketHelper.maxWeight >= maxWeightCost) {
+            AbstractDungeon.effectList.add(new RainingGoldEffect(this.magicNumber * 2, true));
+            this.addToBot(new GainGoldAction(this.magicNumber));
+            TrinketHelper.changeMaxWeight(-maxWeightCost);
+        }
+    }
+
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        return TrinketHelper.maxWeight >= maxWeightCost && hasEnoughEnergy();
     }
 
     public void upgrade() {

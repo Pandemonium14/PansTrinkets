@@ -49,12 +49,11 @@ public class ShardOfMadness extends AbstractTrinket {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ShardOfMadnessAction());
-        TrinketHelper.maxWeight -= magicNumber;
+        addToBot(new ShardOfMadnessAction(magicNumber));
     }
 
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return getApplicableCards(p).size() != 0;
+        return getApplicableCards(p).size() != 0 && TrinketHelper.maxWeight >= magicNumber && hasEnoughEnergy();
     }
 
     private static ArrayList<AbstractCard> getApplicableCards(AbstractPlayer p) {

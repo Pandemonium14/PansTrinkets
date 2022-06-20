@@ -41,12 +41,12 @@
   },
   "pansTrinkets:SealedBox": {
   "NAME": "Sealed Box",
-  "DESCRIPTION": "Gain !M! gold. NL Remove this card from your deck."
+  "DESCRIPTION": "Gain !M! gold. NL Lose 2 Max Weight. NL Remove this card from your deck."
   },
   "pansTrinkets:OrnateMirror": {
   "NAME": "Ornate Mirror",
   "DESCRIPTION": "Choose a card in your hand. Place one copy of it in your hand. NL Exhaust.",
-  "UPGRADE_DESCRIPTION": "Choose a card in your hand. Place copy of it in your hand. It costs 0 this turn. NL Exhaust."
+  "UPGRADE_DESCRIPTION": "Choose a card in your hand. Place copy of it in your hand. It costs 1 less [E] this turn. NL Exhaust."
 },"pansTrinkets:ExplosiveTrap": {
   "NAME": "Explosive Trap",
   "DESCRIPTION": "Innate. Ethereal. NL Next time you take damage, deal !M! damage to ALL enemies."
@@ -112,5 +112,8 @@
 },"pansTrinkets:UnboundFury": {
   "NAME": "Unbound Fury",
   "DESCRIPTION": "{@@} {!M!|>0=Draw !M! card. NL }While in your hand : NL You cannot play other Skills, Attacks are played an additional time."
+},"pansTrinkets:MiracleCoolant": {
+  "NAME": "Miracle Coolant",
+  "DESCRIPTION": "At the end of your turn: NL If you have  no Lightning, Channel !M! Lightning. NL If you have no Frost, Channel !M! Frost."
 }
 }

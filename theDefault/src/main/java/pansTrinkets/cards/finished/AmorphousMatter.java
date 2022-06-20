@@ -24,7 +24,7 @@ public class AmorphousMatter extends AbstractTrinket {
 
     public AmorphousMatter() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.weight = 2;
+        this.weight = 3;
         this.cardStrings = languagePack.getCardStrings(ID);
 
     }

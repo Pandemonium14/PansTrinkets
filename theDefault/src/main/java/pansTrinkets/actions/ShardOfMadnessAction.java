@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import pansTrinkets.cardmods.MaddenedModifier;
+import pansTrinkets.helpers.TrinketHelper;
 
 import java.util.ArrayList;
 
@@ -16,21 +17,33 @@ public class ShardOfMadnessAction extends AbstractGameAction {
 
     private static final AbstractPlayer p = AbstractDungeon.player;;
     private ArrayList<AbstractCard> cardsToAddBack;
+    private int maxWeightCost;
 
-    public ShardOfMadnessAction() {
+    public ShardOfMadnessAction(int weightCost) {
         actionType = ActionType.CARD_MANIPULATION;
         duration = Settings.ACTION_DUR_FAST;
+        maxWeightCost = weightCost;
     }
 
     @Override
     public void update() {
+        //WeightCheck
+        if (TrinketHelper.maxWeight < maxWeightCost) {
+            isDone = true;
+            return;
+        } else {
+            TrinketHelper.changeMaxWeight(- maxWeightCost);
+        }
         if (duration == Settings.ACTION_DUR_FAST) {
             cardsToAddBack = getUnapplicableCards();
             p.hand.group.removeAll(cardsToAddBack);
+            //TODO: Change message
             AbstractDungeon.handCardSelectScreen.open("Reduce a card's cost to zero.",1,false);
             tickDuration();
         } else if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             AbstractCard cardInHand = AbstractDungeon.handCardSelectScreen.selectedCards.group.get(0);
+
+            //do thing with cardInHand
 
             AbstractCard cardInDeck = StSLib.getMasterDeckEquivalent(cardInHand);
 
@@ -45,6 +58,8 @@ public class ShardOfMadnessAction extends AbstractGameAction {
             p.hand.refreshHandLayout();
             addToTop(new MakeTempCardInHandAction(cardInHand));
 
+
+            //mandatory stuff
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
             AbstractDungeon.handCardSelectScreen.selectedCards.clear();
             isDone = true;
