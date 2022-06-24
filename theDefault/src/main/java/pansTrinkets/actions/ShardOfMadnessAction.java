@@ -71,7 +71,7 @@ public class ShardOfMadnessAction extends AbstractGameAction {
         ArrayList<AbstractCard> cards = new ArrayList<AbstractCard>();
         for (AbstractCard c : p.hand.group) {
             AbstractCard masterDeckCard = StSLib.getMasterDeckEquivalent(c);
-            if (c.cost < 1 || masterDeckCard == null) {
+            if (masterDeckCard == null || masterDeckCard.cost < 1) {
                 cards.add(c);
             }
         }

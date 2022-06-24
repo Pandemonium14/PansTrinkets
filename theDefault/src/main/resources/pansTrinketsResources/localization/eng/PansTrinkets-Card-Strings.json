@@ -41,12 +41,12 @@
   },
   "pansTrinkets:SealedBox": {
   "NAME": "Sealed Box",
-  "DESCRIPTION": "Gain !M! gold. NL Lose 2 Max Weight. NL Remove this card from your deck."
+  "DESCRIPTION": "Gain !M! gold. NL Lose 2 Max Weight. NL Fleeting."
   },
   "pansTrinkets:OrnateMirror": {
   "NAME": "Ornate Mirror",
-  "DESCRIPTION": "Choose a card in your hand. Place one copy of it in your hand. NL Exhaust.",
-  "UPGRADE_DESCRIPTION": "Choose a card in your hand. Place copy of it in your hand. It costs 1 less [E] this turn. NL Exhaust."
+  "DESCRIPTION": "Choose a card that isn't Fleeting in your hand. Add a copy of it to your hand. NL Exhaust.",
+  "UPGRADE_DESCRIPTION": "Choose a card that isn't Fleeting in your hand. Place copy of it in your hand. It costs 1 less [E] this turn. NL Exhaust."
 },"pansTrinkets:ExplosiveTrap": {
   "NAME": "Explosive Trap",
   "DESCRIPTION": "Innate. Ethereal. NL Next time you take damage, deal !M! damage to ALL enemies."
@@ -77,8 +77,8 @@
   "DESCRIPTION": "panstrinkets:Quickdraw. NL Gain !B! Block."
 },"pansTrinkets:RunicBoomerang": {
   "NAME": "Runic Boomerang",
-  "DESCRIPTION": "The next card you play goes back to your hand.",
-  "UPGRADE_DESCRIPTION": "The next 2 cards you play go back to your hand."
+  "DESCRIPTION": "The next card you play goes back to your hand. Exhaust",
+  "UPGRADE_DESCRIPTION": "Retain. NL The next card you play go back to your hand. NL Exhaust."
 },"pansTrinkets:MirrorShield": {
   "NAME": "Mirror Shield",
   "DESCRIPTION": "Gain !B! Block. NL Gain !M! Artifact. NL Exhaust"
@@ -99,7 +99,7 @@
   "DESCRIPTION": "Every 5th card played is played an additional time."
 },"pansTrinkets:ShardOfMadness": {
   "NAME": "Shard of Madness",
-  "DESCRIPTION": "Permanently reduce the cost of a card in hand to 0. NL Lose !M! Max Weight. NL Remove this card from your deck."
+  "DESCRIPTION": "Permanently reduce the cost of a card in hand to 0. NL Lose !M! Max Weight. NL Fleeting."
 },"pansTrinkets:Lodestone": {
   "NAME": "Lodestone",
   "DESCRIPTION": "{@@}Put a card from your draw pile into your hand. NL Put a *Spent *Lodestone{!Upgrades!|1=+} in its place. NL Exhaust."
