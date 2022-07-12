@@ -27,7 +27,7 @@ public class SoothingBalm extends AbstractTrinket {
     public SoothingBalm() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.quickDraw = true;
-        this.weight = 1;
+        this.weight = 2;
         cardStrings = languagePack.getCardStrings(ID);
     }
 

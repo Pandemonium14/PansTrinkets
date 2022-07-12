@@ -27,17 +27,18 @@ public class ShardOfMadnessAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        //WeightCheck
-        if (TrinketHelper.maxWeight < maxWeightCost) {
-            isDone = true;
-            return;
-        } else {
-            TrinketHelper.changeMaxWeight(- maxWeightCost);
-        }
+
+
         if (duration == Settings.ACTION_DUR_FAST) {
+            //WeightCheck
+            if (TrinketHelper.maxWeight < maxWeightCost) {
+                 isDone = true;
+                 return;
+            } else {
+                TrinketHelper.changeMaxWeight(- maxWeightCost);
+            }
             cardsToAddBack = getUnapplicableCards();
             p.hand.group.removeAll(cardsToAddBack);
-            //TODO: Change message
             AbstractDungeon.handCardSelectScreen.open("Reduce a card's cost to zero.",1,false);
             tickDuration();
         } else if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
@@ -55,8 +56,8 @@ public class ShardOfMadnessAction extends AbstractGameAction {
             cardInHand.costForTurn = 0;
             cardInHand.isCostModified = true;
             for (AbstractCard c : cardsToAddBack) p.hand.addToTop(c);
+            p.hand.addToTop(cardInHand);
             p.hand.refreshHandLayout();
-            addToTop(new MakeTempCardInHandAction(cardInHand));
 
 
             //mandatory stuff

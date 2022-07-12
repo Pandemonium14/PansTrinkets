@@ -24,7 +24,7 @@ public class Kaleidoscope extends AbstractTrinket {
 
     public Kaleidoscope() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.weight = 3;
+        this.weight = 4;
     }
 
     @Override

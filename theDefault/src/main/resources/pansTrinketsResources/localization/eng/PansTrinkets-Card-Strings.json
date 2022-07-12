@@ -67,8 +67,8 @@
 }
 ,"pansTrinkets:HungryCoin": {
   "NAME": "Hungry Coin",
-  "DESCRIPTION": "Lose !M! Gold. Deal !D! damage. Permanently increase this card's damage and gold cost by 3.",
-  "UPGRADE_DESCRIPTION": "Lose !M! Gold. Deal !D! damage. Permanently increase this card's damage and gold cost by 5."
+  "DESCRIPTION": "Lose !M! Gold. Deal !D! damage. Permanently increase this card's damage by 3.",
+  "UPGRADE_DESCRIPTION": "Lose !M! Gold. Deal !D! damage. Permanently increase this card's damage by 5."
 },"pansTrinkets:ShieldingTalisman": {
   "NAME": "Shielding Talisman",
   "DESCRIPTION": "Shuffle !M! *Wards into your draw pile."
@@ -77,7 +77,7 @@
   "DESCRIPTION": "panstrinkets:Quickdraw. NL Gain !B! Block."
 },"pansTrinkets:RunicBoomerang": {
   "NAME": "Runic Boomerang",
-  "DESCRIPTION": "The next card you play goes back to your hand. Exhaust",
+  "DESCRIPTION": "The next card you play goes back to your hand. NL Exhaust",
   "UPGRADE_DESCRIPTION": "Retain. NL The next card you play go back to your hand. NL Exhaust."
 },"pansTrinkets:MirrorShield": {
   "NAME": "Mirror Shield",

@@ -26,13 +26,13 @@ public class HungryCoin extends AbstractTrinket {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TRINKET_WHITE;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
     private int increment = 3;
 
     public HungryCoin() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseDamage = 3;
-        this.baseMagicNumber = 3;
+        this.baseMagicNumber = 10;
         this.weight = 1;
 
 
@@ -49,11 +49,11 @@ public class HungryCoin extends AbstractTrinket {
         abstractPlayer.loseGold(baseMagicNumber);
         addToBot( new DamageAction(abstractMonster, new DamageInfo(abstractMonster, this.damage)));
         this.baseDamage += increment;
-        this.baseMagicNumber += increment;
+        //this.baseMagicNumber += increment;
         AbstractCard masterCard = StSLib.getMasterDeckEquivalent(this);
         if (masterCard != null) {
             masterCard.baseDamage += increment;
-            masterCard.baseMagicNumber += increment;
+            //masterCard.baseMagicNumber += increment;
         }
         this.makeVisualEffects(abstractPlayer, abstractMonster);
     }
@@ -66,7 +66,6 @@ public class HungryCoin extends AbstractTrinket {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.quickDraw = true;
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             increment = 5;
             super.upgrade();

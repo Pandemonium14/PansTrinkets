@@ -59,8 +59,8 @@ public class OrnateMirrorAction extends AbstractGameAction {
                 if (makeZeroCost && newCard.costForTurn >= 1) {
                     newCard.costForTurn = newCard.costForTurn - 1;
                 }
-                addToBot(new MakeTempCardInHandAction(c));
-                addToBot(new MakeTempCardInHandAction(newCard));
+                addToBot(new MakeTempCardInHandAction(c, true, true));
+                p.hand.group.add(c);
 
             }
             p.hand.group.addAll(cannotDuplicate);

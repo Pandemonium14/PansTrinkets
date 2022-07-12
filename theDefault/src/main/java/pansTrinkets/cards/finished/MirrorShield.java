@@ -28,7 +28,7 @@ public class MirrorShield extends AbstractTrinket {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseBlock = 12;
         this.magicNumber = baseMagicNumber = 1;
-        weight = 2;
+        weight = 3;
         this.exhaust = true;
     }
 

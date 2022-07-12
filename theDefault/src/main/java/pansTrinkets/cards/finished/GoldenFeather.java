@@ -29,7 +29,7 @@ public class GoldenFeather extends AbstractTrinket {
 
     public GoldenFeather() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.weight = 1;
+        this.weight = 2;
         this.exhaust = true;
         this.cardStrings = languagePack.getCardStrings(ID);
     }

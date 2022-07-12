@@ -28,7 +28,7 @@ public class DimLantern extends AbstractTrinket {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 1;
         this.quickDraw = true;
-        this.weight = 3;
+        this.weight = 5;
         cardStrings = languagePack.getCardStrings(ID);
     }
 

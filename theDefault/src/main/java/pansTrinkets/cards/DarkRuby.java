@@ -13,6 +13,9 @@ import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import pansTrinkets.DefaultMod;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static pansTrinkets.DefaultMod.makeCardPath;
 import static pansTrinkets.patches.EnumColorPatch.TRINKET_WHITE;
@@ -54,4 +57,5 @@ public class DarkRuby extends AbstractTrinket {
             upgradeMagicNumber(4);
         }
     }
+
 }

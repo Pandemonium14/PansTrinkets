@@ -74,7 +74,7 @@ public class FuryPower extends AbstractPower implements InvisiblePower {
                 numberOfFury += 1;
             }
         }
-        if (!card.purgeOnUse && this.amount > 0) {
+        if (!card.purgeOnUse && this.amount > 0 && card.type == AbstractCard.CardType.ATTACK) {
             for (int count = 0 ; count<numberOfFury; count++) {
                 AbstractMonster m = null;// 50
                 if (action.target != null) {// 52

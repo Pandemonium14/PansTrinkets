@@ -24,7 +24,7 @@ public class ShieldingTalisman extends AbstractTrinket {
 
     public ShieldingTalisman() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.weight = 2;
+        this.weight = 3;
         this.magicNumber = this.baseMagicNumber = 2;
         this.cardsToPreview = new Guard();
     }

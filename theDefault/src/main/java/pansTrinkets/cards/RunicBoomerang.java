@@ -26,6 +26,7 @@ public class RunicBoomerang extends AbstractTrinket {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 1;
         this.weight = 3;
+        exhaust = true;
         this.cardStrings = languagePack.getCardStrings(ID);
     }
 
@@ -39,7 +40,7 @@ public class RunicBoomerang extends AbstractTrinket {
         if (!this.upgraded) {
             this.upgradeName();
             rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-            this.upgradeMagicNumber(1);
+            selfRetain = true;
             this.initializeDescription();
         }
     }
