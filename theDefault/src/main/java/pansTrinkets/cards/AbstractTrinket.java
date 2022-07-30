@@ -14,11 +14,13 @@ import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import pansTrinkets.actions.LargeAction;
 import pansTrinkets.cardmods.ShiftingModifier;
 import pansTrinkets.helpers.TrinketHelper;
@@ -43,6 +45,8 @@ public abstract class AbstractTrinket extends AbstractDefaultCard {
     private Color renderColor = Color.WHITE.cpy();
     public CardStrings cardStrings;
     public ArrayList<AbstractPlayer.PlayerClass> availableFor = new ArrayList<>();
+
+    public static final UIStrings weightToolTipStrings = languagePack.getUIString("pansTrinkets:WeightToolTip");
 
 
 
@@ -135,7 +139,7 @@ public abstract class AbstractTrinket extends AbstractDefaultCard {
     public List<TooltipInfo> getCustomTooltips() {
         List<TooltipInfo> tips = new ArrayList<TooltipInfo>();
         if (weight > 0) {
-            tips.add(new TooltipInfo("[pansTrinkets:WeightIcon] Weight", "You can only carry trinkets of a total weight lower than your Max Weight. You gain #y1 Max Weight for every two cards you add to your deck."));
+            tips.add(new TooltipInfo(weightToolTipStrings.TEXT[0], weightToolTipStrings.EXTRA_TEXT[0]));
         }
         return tips;
     }

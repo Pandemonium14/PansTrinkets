@@ -5,7 +5,9 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import pansTrinkets.actions.RemoveRewardEffect;
 import pansTrinkets.patches.TrinketRewardTypePatch;
@@ -19,9 +21,10 @@ public class LinkedCardReward extends CustomReward {
     private static final Texture ICON = new Texture(Gdx.files.internal(getModID() + "Resources/images/icon/cardReward.png"));
     public RewardItem linkedReward;
     public boolean isLinkedRewardTaken;
+    public static final UIStrings strings = CardCrawlGame.languagePack.getUIString("RewardItem");
 
     public LinkedCardReward(ArrayList<AbstractCard> cards, TrinketReward reward) {
-        super(ICON,"Add a card to your deck", TrinketRewardTypePatch.PANS_TRINKET_CARD_REWARD);
+        super(ICON,strings.TEXT[2], TrinketRewardTypePatch.PANS_TRINKET_CARD_REWARD);
         linkedReward = reward;
         this.cards = cards;
         isLinkedRewardTaken = false;
@@ -35,7 +38,7 @@ public class LinkedCardReward extends CustomReward {
         if (linkedReward != null && isLinkedRewardTaken) {
             return true;
         }
-        AbstractDungeon.cardRewardScreen.open(cards,this, "Add a card to your deck");
+        AbstractDungeon.cardRewardScreen.open(cards,this, strings.TEXT[4]);
         AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.COMBAT_REWARD;
         return false;
     }

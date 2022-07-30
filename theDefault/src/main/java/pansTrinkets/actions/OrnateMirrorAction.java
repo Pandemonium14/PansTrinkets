@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import pansTrinkets.DefaultMod;
 import pansTrinkets.cards.OrnateMirror;
 
 import java.util.ArrayList;
@@ -49,7 +50,7 @@ public class OrnateMirrorAction extends AbstractGameAction {
                 p.hand.group.addAll(cannotDuplicate);
                 this.isDone = true;
             } else {
-                AbstractDungeon.handCardSelectScreen.open("duplicate.", 1, true, true);
+                AbstractDungeon.handCardSelectScreen.open(DefaultMod.actionsStrings.TEXT[1], 1, true, true);
                 this.tickDuration();
             }
         } else if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {

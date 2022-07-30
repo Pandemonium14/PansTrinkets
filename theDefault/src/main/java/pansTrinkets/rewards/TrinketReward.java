@@ -6,9 +6,11 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import pansTrinkets.actions.RemoveRewardEffect;
 import pansTrinkets.helpers.TrinketLibrary;
@@ -25,16 +27,18 @@ public class TrinketReward extends CustomReward {
     public RewardItem linkedReward;
     public boolean isLinkedRewardTaken;
 
+    public static final UIStrings strings = CardCrawlGame.languagePack.getUIString("pansTrinkets:TrinketReward");
+
 
     public TrinketReward(boolean rare) {
-        super(ICON,"Get a trinket", TrinketRewardTypePatch.PANS_TRINKET_TRINKET_REWARD);
+        super(ICON,strings.TEXT[0], TrinketRewardTypePatch.PANS_TRINKET_TRINKET_REWARD);
         isRare = rare;
         cards = generateCardChoices();
         isLinkedRewardTaken = false;
     }
 
     public TrinketReward(boolean rare,ArrayList<AbstractCard> choices, RewardItem reward) {
-        super(ICON,"Get a trinket", TrinketRewardTypePatch.PANS_TRINKET_TRINKET_REWARD);
+        super(ICON, strings.TEXT[0], TrinketRewardTypePatch.PANS_TRINKET_TRINKET_REWARD);
         linkedReward = reward;
         isRare = rare;
         cards = choices;
@@ -47,7 +51,7 @@ public class TrinketReward extends CustomReward {
         if (linkedReward != null && isLinkedRewardTaken) {
             return true;
         }
-        AbstractDungeon.cardRewardScreen.open(cards,this, "Choose one trinket.");
+        AbstractDungeon.cardRewardScreen.open(cards,this, strings.EXTRA_TEXT[0]);
         AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.COMBAT_REWARD;
         return false;
     }

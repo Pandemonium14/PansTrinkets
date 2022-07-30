@@ -16,6 +16,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardQueueItem;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
@@ -124,6 +125,9 @@ public class DefaultMod implements
     private static final String POWER_TRINKET_WHITE_PORTRAIT = "pansTrinketsResources/images/1024/bg_power_default_gray2.png";
     private static final String ENERGY_ORB_TRINKET_WHITE_PORTRAIT = "pansTrinketsResources/images/1024/card_default_gray_orb.png";
 
+
+
+    public static UIStrings actionsStrings;
     // =============== MAKE IMAGE PATHS =================
 
     public static String makeCardPath(String resourcePath) {
@@ -145,9 +149,6 @@ public class DefaultMod implements
     public static String makePowerPath(String resourcePath) {
         return getModID() + "Resources/images/powers/" + resourcePath;
     }
-    // =============== /MAKE IMAGE PATHS/ =================
-    
-    // =============== /INPUT TEXTURE LOCATION/ =================
     
     
     // =============== SUBSCRIBE, INITIALIZE =================
@@ -266,6 +267,8 @@ public class DefaultMod implements
     @Override
     public void receivePostInitialize() {
         logger.info("Loading badge image and mod options");
+
+        actionsStrings = CardCrawlGame.languagePack.getUIString("pansTrinkets:Actions");
         
         // Load the Mod Badge
         Texture badgeTexture = TextureLoader.getTexture(BADGE_IMAGE);
@@ -428,21 +431,29 @@ public class DefaultMod implements
     
     @Override
     public void receiveEditStrings() {
-        logger.info("You seeing this?");
-        logger.info("Beginning to edit strings for mod with ID: " + getModID());
-        
-        // PowerStrings
-        BaseMod.loadCustomStringsFile(PowerStrings.class,
-                getModID() + "Resources/localization/eng/PansTrinkets-Power-Strings.json");
-        
-        // RelicStrings
-        BaseMod.loadCustomStringsFile(RelicStrings.class,
-                getModID() + "Resources/localization/eng/PansTrinkets-Relic-Strings.json");
+        String lang;
+        switch (Settings.language) {
+            case RUS:
+                lang = "rus";
+                break;
+            case FRA:
+                lang = "fra";
+                break;
+            default:
+                lang = "eng";
+                break;
+        }
 
+
+        BaseMod.loadCustomStringsFile(PowerStrings.class,
+                getModID() + "Resources/localization/"+lang+"/PansTrinkets-Power-Strings.json");
+        BaseMod.loadCustomStringsFile(RelicStrings.class,
+                getModID() + "Resources/localization/"+lang+"/PansTrinkets-Relic-Strings.json");
         BaseMod.loadCustomStringsFile(CardStrings.class,
-                getModID() + "Resources/localization/eng/PansTrinkets-Card-Strings.json");
-        
-        logger.info("Done editing strings");
+                getModID() + "Resources/localization/"+lang+"/PansTrinkets-Card-Strings.json");
+        BaseMod.loadCustomStringsFile(UIStrings.class,
+                getModID() + "Resources/localization/"+lang+"/PansTrinkets-UI-Strings.json");
+
     }
     
     // ================ /LOAD THE TEXT/ ===================
@@ -459,9 +470,20 @@ public class DefaultMod implements
         // If you're using multiword keywords, the first element in your NAMES array in your keywords-strings.json has to be the same as the PROPER_NAME.
         // That is, in Card-Strings.json you would have #yA_Long_Keyword (#y highlights the keyword in yellow).
         // In Keyword-Strings.json you would have PROPER_NAME as A Long Keyword and the first element in NAMES be a long keyword, and the second element be a_long_keyword
-        
+        String lang;
+        switch (Settings.language) {
+            case RUS:
+                lang = "rus";
+                break;
+            case FRA:
+                lang = "fra";
+                break;
+            default:
+                lang = "eng";
+                break;
+        }
         Gson gson = new Gson();
-        String json = Gdx.files.internal(getModID() + "Resources/localization/eng/PansTrinkets-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String json = Gdx.files.internal(getModID() + "Resources/localization/"+lang+"/PansTrinkets-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
         com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = gson.fromJson(json, com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
         
         if (keywords != null) {

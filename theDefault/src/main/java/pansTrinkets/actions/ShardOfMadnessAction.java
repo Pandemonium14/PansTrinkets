@@ -8,8 +8,10 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import pansTrinkets.DefaultMod;
 import pansTrinkets.cardmods.MaddenedModifier;
 import pansTrinkets.helpers.TrinketHelper;
+import pansTrinkets.relics.DefaultClickableRelic;
 
 import java.util.ArrayList;
 
@@ -39,7 +41,7 @@ public class ShardOfMadnessAction extends AbstractGameAction {
             }
             cardsToAddBack = getUnapplicableCards();
             p.hand.group.removeAll(cardsToAddBack);
-            AbstractDungeon.handCardSelectScreen.open("Reduce a card's cost to zero.",1,false);
+            AbstractDungeon.handCardSelectScreen.open(DefaultMod.actionsStrings.TEXT[2],1,false);
             tickDuration();
         } else if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             AbstractCard cardInHand = AbstractDungeon.handCardSelectScreen.selectedCards.group.get(0);

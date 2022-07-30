@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import pansTrinkets.DefaultMod;
 import pansTrinkets.cardmods.IllusoryModifier;
 import pansTrinkets.cards.AbstractTrinket;
 import pansTrinkets.cards.UnboundFury;
@@ -33,7 +34,7 @@ public class AmorphousMatterAction extends AbstractGameAction {
                 ((AbstractTrinket)c).weight = 0;
             }
 
-            AbstractDungeon.cardRewardScreen.customCombatOpen(trinkets, "Choose a card to add to your hand.", true);
+            AbstractDungeon.cardRewardScreen.customCombatOpen(trinkets, DefaultMod.actionsStrings.TEXT[0], true);
             tickDuration();
         } else {
             if (AbstractDungeon.cardRewardScreen.discoveryCard != null) {

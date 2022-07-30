@@ -1,0 +1,119 @@
+{
+  "pansTrinkets:DimLantern": {
+    "NAME": "Lanterne Pâle",
+    "DESCRIPTION": "panstrinkets:Léger. NL Au prochain tour, gagnez [E].",
+    "UPGRADE_DESCRIPTION": "panstrinkets:Léger . NL Au prochain tour, gagnez [E] [E]."
+  },
+  "pansTrinkets:BagOfDaggers": {
+    "NAME": "Sac de Dagues",
+    "DESCRIPTION": " panstrinkets:Léger. NL Infligez !D! dégats. NL Insérez cette carte dans la pioche."
+  },
+  "pansTrinkets:SoothingBalm": {
+    "NAME": "Soothing Balm",
+    "DESCRIPTION": "panstrinkets:Léger. NL Épuisez TOUTES vos cartes Statut.",
+    "UPGRADE_DESCRIPTION": "Retenue. panstrinkets:Léger. NL Épuisez TOUTES vos cartes Statut."
+  },
+  "pansTrinkets:WornWhetstone": {
+    "NAME": "Vieille Pierre à Aiguiser",
+    "DESCRIPTION": "Gagnez !M! de Force. NL panstrinkets:Lourd."
+  },
+  "pansTrinkets:WraithCloak": {
+    "NAME": "Cape de Spectre",
+    "DESCRIPTION": "Éthérée. NL Gagnez 1 Intangible.",
+    "UPGRADE_DESCRIPTION": "Gagnez 1 Intangible."
+  },
+  "pansTrinkets:GoldenFeather": {
+    "NAME": "Plume Dorée",
+    "DESCRIPTION": "Améliorez toutes les cartes de votre pioche OU de votre défausse pour le reste du combat. NL Épuisement.",
+    "UPGRADE_DESCRIPTION": "Améliorez toutes les cartes de votre main, et de votre pioche OU de votre défausse pour le reste du combat. NL Épuisement."},
+  "pansTrinkets:FromBelow": {
+    "NAME": "Du Plus Bas",
+    "DESCRIPTION": "Améliorez toutes les cartes de votre défausse pour le reste du combat."
+  },
+  "pansTrinkets:RiseAbove": {
+    "NAME": "S'Élever au Plus Haut",
+    "DESCRIPTION": "Améliorez toutes les cartes de votre pioche pour le reste du combat."
+  },
+  "pansTrinkets:SapphireLocket": {
+    "NAME": "Pendentif de Saphir",
+    "DESCRIPTION": "Inné. Éthérée. NL Piochez un pouvoir aléatoire de votre pioche. NL  Épuisement.",
+    "UPGRADE_DESCRIPTION": "Inné. Éthérée. panstrinkets:Léger. NL Piochez un pouvoir aléatoire de votre pioche. NL  Épuisement."
+  },
+  "pansTrinkets:SealedBox": {
+    "NAME": "Boîte Scélée",
+    "DESCRIPTION": "Gagnez !M! d'or. NL Perdez 2 de Poids Max. Éphémere."
+  },
+  "pansTrinkets:OrnateMirror": {
+    "NAME": "Mirroir Orné",
+    "DESCRIPTION": "Copiez une carte non Éphémere de votre main. NL Épuisement.",
+    "UPGRADE_DESCRIPTION": "Copiez une carte non Éphémere de votre main. La copie coute [E] en moins pendant ce tour. NL Épuisement."
+  },"pansTrinkets:ExplosiveTrap": {
+  "NAME": "Piège Explosif",
+  "DESCRIPTION": "Inné. Éthérée. NL La prochaine fois que vous perdez des PV, infligez !M! dégats à TOUT les ennemis."
+},"pansTrinkets:Kaleidoscope": {
+  "NAME": "Kaleidoscope",
+  "DESCRIPTION": "Au début de votre tour, ajoutez une carte panstrinkets:Illusoire de n'importe quelle couleur à votre main."
+},"pansTrinkets:UniversalDictionary": {
+  "NAME": "Dictionnaire Universel",
+  "DESCRIPTION": "panstrinkets:Lourd. NL Piochez !M! cartes.",
+  "UPGRADE_DESCRIPTION": "panstrinkets:Lourd. NL Draw cards until your hand is full."
+},"pansTrinkets:AmorphousMatter": {
+  "NAME": "Matière Amorphe",
+  "DESCRIPTION": "Choisissez une babiole alétoire à ajouter à votre main. Elle est panstrinkets:Illusoire.",
+  "UPGRADE_DESCRIPTION": "Choisissez une babiole alétoire à ajouter à votre main. Elle est panstrinkets:Illusoire et Améliorée."
+},"pansTrinkets:FangHammer": {
+  "NAME": "Marteau Croc",
+  "DESCRIPTION": "Infligez !D! dégats. NL Si cette carte tue un ennemi, récuperez des PV égaux aux dégats non bloqués."
+}
+,"pansTrinkets:HungryCoin": {
+  "NAME": "Pièce Affamée",
+  "DESCRIPTION": "Perdez !M! d'Or. Infligez !D! dégats. Augmentez les dégats de cette carte de 3 de façon permanente.",
+  "UPGRADE_DESCRIPTION": "Perdez !M! d'Or. Infligez !D! dégats. Augmentez les dégats de cette carte de 5 de façon permanente."
+},"pansTrinkets:ShieldingTalisman": {
+  "NAME": "Talisman de Protection",
+  "DESCRIPTION": "Insérez !M! *Guardes dans votre pioche."
+},"pansTrinkets:Guard": {
+  "NAME": "Guarde",
+  "DESCRIPTION": "panstrinkets:Léger. NL Gagnez !B! d'Armure."
+},"pansTrinkets:RunicBoomerang": {
+  "NAME": "Boomerang Runique",
+  "DESCRIPTION": "La prochaine carte que vous jouez est remise dans votre main. NL Épuisement.",
+  "UPGRADE_DESCRIPTION": "Retenue. NL La prochaine carte que vous jouez est remise dans votre main. NL Épuisement."
+},"pansTrinkets:MirrorShield": {
+  "NAME": "Bouclier Miroir",
+  "DESCRIPTION": "Gagnez !B! d'Armure. NL Ganez !M! d'Artefact. NL Épuisement."
+},"pansTrinkets:ThePlan": {
+  "NAME": "Le Plan",
+  "DESCRIPTION": "Piochez !M! cartes. NL Elles sont Retenues ce tour."
+},"pansTrinkets:OrichalcumArmor": {
+  "NAME": "Armure d'Orichalque",
+  "DESCRIPTION": "Gagnez !B! d'Armure. NL Si cette carte est dans votre deck, gagnez !M! d'Armure à la fin de votre tour."
+},"pansTrinkets:DarkRuby": {
+  "NAME": "Sombre Rubis",
+  "DESCRIPTION": "l'Ennemi perd !M! de Force pendant ce tour. NL Insérez un Vide dans votre défausse."
+},"pansTrinkets:CorruptedIdol": {
+  "NAME": "Idole Corrompue",
+  "DESCRIPTION": "Tant que cette carte est dans votre deck, vous avez 20 PV max. NL Épuisement."
+},"pansTrinkets:EchoChamber": {
+  "NAME": "Chambre de Résonance",
+  "DESCRIPTION": "Vous jouez une fois supplémentaire toutes les 5 cartes que vous jouez."
+},"pansTrinkets:ShardOfMadness": {
+  "NAME": "Fragment de Folie",
+  "DESCRIPTION": "Réduit le coût d'une carte à 0 de façon permanente. NL Perdez !M! de Poids Max. NL Éphémere."
+},"pansTrinkets:Lodestone": {
+  "NAME": "Magnétite",
+  "DESCRIPTION": "{@@}Ajoutez une carte de votre pioche à votre main. NL Placez une *Magnétite *Épuisée{!Upgrades!|1=+} à sa place. NL Épuisement."
+},"pansTrinkets:SpentLodestone": {
+  "NAME": "Magnétite Épuisée",
+  "DESCRIPTION": "{@@}Ajoutez une carte de votre défausse à votre main.{!Upgrades!|1= NL Placez une *Magnétite à sa place.} NL Épuisement."
+},"pansTrinkets:SymbolOfFury": {
+  "NAME": "Symbole de Furie",
+  "DESCRIPTION": "{@@}Éthérée. NL Insérez une *Furie *Déchainée{!Upgrades!|1=+} dans votre pioche. NL Épuisement."
+},"pansTrinkets:UnboundFury": {
+  "NAME": "Furie Déchainée",
+  "DESCRIPTION": "{@@} {!M!|>0=Piochez !M! carte. NL }Si dans votre main : NL Vous ne pouvez pas utiliser d'autre Compétences, et les Attaques sont jouée une fois de plus."
+},"pansTrinkets:MiracleCoolant": {
+  "NAME": "Miracle Coolant",
+  "DESCRIPTION": "At the end of your turn: NL If you have  no Lightning, Channel !M! Lightning. NL If you have no Frost, Channel !M! Frost."
+}
+}

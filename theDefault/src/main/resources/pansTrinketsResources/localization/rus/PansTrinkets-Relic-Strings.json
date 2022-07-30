@@ -1,0 +1,39 @@
+{
+  "pansTrinkets:PlaceholderRelic": {
+    "NAME": "Placeholder Energy Relic",
+    "FLAVOR": "The snake is a friend.",
+    "DESCRIPTIONS": [
+      "Даёт #b1 [E] ."
+    ]
+  },
+  "pansTrinkets:PlaceholderRelic2": {
+    "NAME": "Placeholder Relic 2",
+    "FLAVOR": "You feel stronger.",
+    "DESCRIPTIONS": [
+      "В начале каждого боя получите #b1 [#8B0000]Силу."
+    ]
+  },
+  "pansTrinkets:DefaultClickableRelic": {
+    "NAME": "Right-Clicky Relic",
+    "FLAVOR": "The more you right-click it, the more orbs you've evoked in your lifetime.",
+    "DESCRIPTIONS": [
+      "[#2aecd7]Можно [#2aecd7]использовать [#2aecd7]один [#2aecd7]раз [#2aecd7]за [#2aecd7]ход.[] NL [#C1FFC1]Разрядите вашу правую [#65E0EC]Сферу.",
+      "ТЫ МОЯ!"
+    ]
+  },
+  "pansTrinkets:BottledPlaceholderRelic": {
+    "NAME": "Bottled Placeholder",
+    "FLAVOR": "What is this?",
+    "DESCRIPTIONS": [
+      "Выберите карту. Когда вы берете любую карту, разыграйте ее, вытяните выбранную карту.",
+      "Когда вы разыгрываете карту, возьмите ",
+      ".",
+      "Выберите карту для помещения в бутылку "
+    ]
+  },
+  "pansTrinkets:BottomlessBag": {
+    "NAME": "Бездонный Мешок",
+    "FLAVOR": "Эта сумка бездонна.",
+    "DESCRIPTIONS": ["Общий вес безделушек, которые вы можете добавить в свою колоду, не ограничен."]
+  }
+}

@@ -28,12 +28,12 @@ public class BoomerangAction extends AbstractGameAction {
         AbstractPlayer p = AbstractDungeon.player;
         if (p.discardPile.group.contains(card)) {
             p.discardPile.moveToHand(card);
-        } else if (p.exhaustPile.group.contains(card)) {
-            p.exhaustPile.moveToHand(card);
+        //} else if (p.exhaustPile.group.contains(card)) {
+        //    p.exhaustPile.moveToHand(card);
         } else if (p.drawPile.contains(card)) {
             p.drawPile.moveToHand(card);
-        } else if (StSLib.getMasterDeckEquivalent(card)!=null) {
-            addToBot(new MakeTempCardInHandAction(card.makeStatEquivalentCopy()));
+        //} else if (StSLib.getMasterDeckEquivalent(card)!=null) {
+        //    addToBot(new MakeTempCardInHandAction(card.makeStatEquivalentCopy()));
         }
         this.isDone = true;
     }

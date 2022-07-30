@@ -1,0 +1,123 @@
+{
+  "pansTrinkets:DimLantern": {
+  "NAME": "Тусклый фонарь",
+  "DESCRIPTION": "panstrinkets:Быстрая. NL На следующем ходу получите [E].",
+  "UPGRADE_DESCRIPTION": "panstrinkets:Быстрая . NL На следующем ходу получите [E] [E]."
+},
+  "pansTrinkets:BagOfDaggers": {
+  "NAME": "Сумка с кинжалами",
+  "DESCRIPTION": " panstrinkets:Быстрая. NL Наносит !D! урона. NL Верните эту карту в стопку добора.",
+  "UPGRADE_DESCRIPTION":"panstrinkets:Быстрая. [#FFE4B5]Оставляется[]. NL [#FF8C00]Сожгите[] все карты [#CD9575]Статуса[] из вашей руки, стопки сброса и стопки добора."
+},
+  "pansTrinkets:SoothingBalm": {
+    "NAME": "Успокаивающий бальзам",
+    "DESCRIPTION": "panstrinkets:Быстрая. NL [#FF8C00]Сжигает[] все ваши карты [#CD9575]Статуса[].",
+    "UPGRADE_DESCRIPTION" : "[#FFE4B5]Оставляется[]. NL panstrinkets:Быстрая. NL [#FF8C00]Сжигает[] все ваши карты [#CD9575]Статуса[]."
+},
+  "pansTrinkets:WornWhetstone": {
+    "NAME": "Точильный камень",
+    "DESCRIPTION": "Даёт !M! [#8B0000]Силы[]. NL panstrinkets:Большая."
+},
+  "pansTrinkets:WraithCloak": {
+    "NAME": "Призрачный плащ",
+    "DESCRIPTION": "[#7B68EE]Эфирная[]. NL Даёт 1 *Нематериальность.",
+    "UPGRADE_DESCRIPTION": "Даёт 1 *Нематериальность."
+},
+  "pansTrinkets:GoldenFeather": {
+    "NAME": "Золотое перо",
+    "DESCRIPTION": "Улучшает все карты в вашей стопке добора ИЛИ стопке сброса до конца боя. NL [#FF8C00]Сжигается[].",
+    "UPGRADE_DESCRIPTION": "Улучшает все карты в руке, стопке добора ИЛИ стопке сброса до конца боя.. NL [#FF8C00]Сжигается[]."
+  },
+  "pansTrinkets:FromBelow": {
+    "NAME": "Снизу",
+    "DESCRIPTION": "Улучшает все карты в стопке сброса до конца боя."
+  },
+  "pansTrinkets:RiseAbove": {
+    "NAME": "Подняться выше",
+    "DESCRIPTION": "Улучшает все карты в стопке добора до конца боя."
+  },
+  "pansTrinkets:SapphireLocket": {
+    "NAME": "Сапфировый медальон",
+    "DESCRIPTION": "Начальная. [#7B68EE]Эфирная[]. NL Возьмите [#C0C0C0]случайную[] карту [#8B0000]Силы[] из вашей колоды. NL [#FF8C00]Сжигается[].",
+    "UPGRADE_DESCRIPTION": "Начальная. [#7B68EE]Эфирная[]. NL panstrinkets:Быстрая. NL Возьмите [#C0C0C0]случайную[] карту [#8B0000]Силы[] из вашей колоды. NL [#FF8C00]Сжигается[]."
+  },
+  "pansTrinkets:SealedBox": {
+  "NAME": "Запечатанная коробка",
+  "DESCRIPTION": "Даёт !M! [#FFD700]Золота[]. NL Эта карта будет убрана из колоды после разыгрывания."
+  },
+  "pansTrinkets:OrnateMirror": {
+  "NAME": "Изысканное зеркало",
+  "DESCRIPTION": "Выберите карту в руке. Поместите копию этой карты в руку. NL [#FF8C00]Сжигается[].",
+  "UPGRADE_DESCRIPTION": "Выберите карту в руке. Поместите копию этой карты в руку. Она стоит 0 на этом ходу. NL [#FF8C00]Сжигается[]."
+},"pansTrinkets:ExplosiveTrap": {
+  "NAME": "Взрывная ловушка",
+  "DESCRIPTION": "Начальная. [#7B68EE]Эфирная[]. NL Когда вы получите урон, нанесёт !M! урона всем врагам."
+},"pansTrinkets:Kaleidoscope": {
+  "NAME": "Калейдоскоп",
+  "DESCRIPTION": "В начале вашего хода, добавляет [#C0C0C0]случайную[] panstrinkets:иллюзорную карту случайного цвета в колоду."
+},"pansTrinkets:UniversalDictionary": {
+  "NAME": "Универсальный словарь",
+  "DESCRIPTION": "panstrinkets:Большая. NL Возьмите !M! карт.",
+  "UPGRADE_DESCRIPTION": "panstrinkets:Большая. NL Возьмите карты из стопки добора, пока рука не будет полной."
+},"pansTrinkets:AmorphousMatter": {
+  "NAME": "Аморфная материя",
+  "DESCRIPTION": "Выберите [#C0C0C0]случайную[] безделушку, чтобы добавить ее в свою руку. Она panstrinkets:иллюзорная.",
+  "UPGRADE_DESCRIPTION": "Выберите [#C0C0C0]случайную[] безделушку, чтобы добавить ее в свою руку. Она panstrinkets:иллюзорная и Улучшена."
+},"pansTrinkets:FangHammer": {
+  "NAME": "Клыкастый молот",
+  "DESCRIPTION": "Наносит !D! урона. Если убивает, то лечит [#FA8072]ОЗ[] в размере нанесённого незаблокированного урона"
+},"pansTrinkets:CrystalBall": {
+  "NAME": "Хрустальный шар",
+  "DESCRIPTION": "Начальная. panstrinkets:Большая. NL Предскажите всю вашу стопку добора. Добавляет !M! Ошеломление в стопку добора."
+},"pansTrinkets:HungryCoin": {
+  "NAME": "Голодная монета",
+  "DESCRIPTION": "Потеряйте !M! [#FFD700]Золота[]. Наносит !D! урона. Перманентно увеличиваются урон и затраты [#FFD700]золота[] на 3 при разыгрывании.",
+  "UPGRADE_DESCRIPTION": "Потеряйте !M! [#FFD700]Золота[]. Наносит !D! урона. Перманентно увеличиваются урон и затраты [#FFD700]золота[] на 5 при разыгрывании."
+},"pansTrinkets:ShieldingTalisman": {
+  "NAME": "Защитный талисман",
+  "DESCRIPTION": "Замешивает !M! карты *Страж в стопку добора."
+},"pansTrinkets:Guard": {
+  "NAME": "Страж",
+  "DESCRIPTION": "panstrinkets:Быстрая. NL Даёт !B! [#A0522D]Защиты[]."
+},"pansTrinkets:RunicBoomerang": {
+  "NAME": "Рунный бумеранг",
+  "DESCRIPTION": "Следующая карта, которую вы разыграете, возвращается в руку.",
+  "UPGRADE_DESCRIPTION": "Следующие 2 карты, которые вы разыграете, возвращаются в руку."
+},"pansTrinkets:MirrorShield": {
+  "NAME": "Зеркальный щит",
+  "DESCRIPTION": "Даёт !B! [#A0522D]Защиты[]. NL Даёт !M! Артефакт. NL [#FF8C00]Сжигается[]."
+},"pansTrinkets:ThePlan": {
+  "NAME": "План",
+  "DESCRIPTION": "Возьмите !M! карты. Эти карты удерживаются в конце хода."
+},"pansTrinkets:OrichalcumArmor": {
+  "NAME": "Орихалковая броня",
+  "DESCRIPTION": "Даёт !B! [#A0522D]Защиты[]. NL Если эта карта в вашей колоде, даёт !M! [#C0C0C0]Металлизация[] в начале боя."
+},"pansTrinkets:DarkRuby": {
+  "NAME": "Темно-рубиновый",
+  "DESCRIPTION": "Враги теряют !M! [#8B0000]Силы[] до конца этого хода. NL Добавляет карту *Пустота в стопку сброса ."
+},"pansTrinkets:CorruptedIdol": {
+  "NAME": "Испорченный идол",
+  "DESCRIPTION": "Пока эта карта находится в колоде, у вас на 20 [#FA8072]ОЗ[] больше. NL [#FF8C00]Сжигается[]."
+},"pansTrinkets:EchoChamber": {
+  "NAME": "Эхо-камера",
+  "DESCRIPTION": "Каждая 5-я сыгранная карта разыгрывается повторно."
+},"pansTrinkets:ShardOfMadness": {
+  "NAME": "Осколок безумия",
+  "DESCRIPTION": "Перманентно уменьшает стоимость карт в руке до 0. NL Вы теряете !M! максимального веса. NL Уберите эту карты из колоды."
+},"pansTrinkets:Lodestone": {
+  "NAME": "Магнетит",
+  "DESCRIPTION": "{@@}Положите карту из стопки добора в свою руку. NL Положите *Отработанный *магнетит{!Upgrades!|1=+} на её место. NL [#FF8C00]Сжигается[]."
+},"pansTrinkets:SpentLodestone": {
+  "NAME": "Отработанный магнетит",
+  "DESCRIPTION": "{@@}Положите карту из стопки сброса в свою руку.{!Upgrades!|1= NL Положите *Магнетит на её место.} NL [#FF8C00]Сжигается[]."
+},"pansTrinkets:SymbolOfFury": {
+  "NAME": "Символ ярости",
+  "DESCRIPTION": "{@@}[#7B68EE]Эфирная[]. NL Замешайте *Необузданная *ярость{!Upgrades!|1=+} в стопку добора. NL [#FF8C00]Сжигается[]."
+},"pansTrinkets:UnboundFury": {
+  "NAME": "Необузданная ярость",
+  "DESCRIPTION": "{@@} {!M!|>0=Возьмите !M! карты. NL }Пока в руке : NL Вы не можете использовать другие [#00BFFF]Навыки[] и [#DC143C]Атаки[] ."
+},"pansTrinkets:MiracleCoolant": {
+  "NAME": "Чудо-охлаждающая жидкость",
+  "DESCRIPTION": "В конце вашего хода: NL Если у вас нет [#65E0EC]Сфер[] [#6495ED]Молнии[], заряжает !M! [#65E0EC]Сферы[] [#6495ED]Молнии[]. NL Если у вас нет [#65E0EC]Сфер[] [#00BFFF]Льда[], заряжает !M! [#65E0EC]Сферы[] [#00BFFF]Льда[]."
+}
+}

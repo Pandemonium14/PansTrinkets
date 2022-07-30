@@ -1,0 +1,20 @@
+{
+"pansTrinkets:TrinketReward" : {
+  "TEXT": ["Trouvez une babiole"],
+  "EXTRA_TEXT": ["Choisissez une carte.."]
+},
+  "pansTrinkets:WeightToolTip" : {
+    "TEXT" : ["[pansTrinkets:WeightIcon] Poids"],
+    "EXTRA_TEXT" : ["Vous ne pouvez porter que des babioles d'un Poids total inferieur à votre Poids max. Vous gagnez #y1 Poids max toutes les 2 cartes que vous ajoutez à votre deck."]
+  },
+  "pansTrinkets:Actions" : {
+    "TEXT" : ["Choisissez une carte à ajouter à votre main." ," dupliquer.", " reduire son coût à 0."]
+  },
+  "pansTrinkets:CampfireOption" : {
+    "TEXT" : ["Retirez une babiole." ,"Retirez une babiole de votre deck. Action gratuite."]
+  },
+  "pansTrinkets:TopPanelWeightIcon" : {
+    "TEXT" : ["[pansTrinkets:WeightIcon] Poids"],
+    "EXTRA_TEXT" : ["Vous ne pouvez porter que des babioles d'un Poids total inferieur à votre Poids max. Vous gagnez #y1 Poids max toutes les 2 cartes que vous ajoutez à votre deck."]
+  }
+}

@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import pansTrinkets.DefaultMod;
 import pansTrinkets.cards.SpentLodestone;
 
 public class LodestoneDrawPileAction extends AbstractGameAction {
@@ -47,7 +48,7 @@ public class LodestoneDrawPileAction extends AbstractGameAction {
                 isDone = true;
                 return;
             } else {
-                AbstractDungeon.gridSelectScreen.open(tmp,1, false,"Choose a card to add to your hand.");
+                AbstractDungeon.gridSelectScreen.open(tmp,1, false, DefaultMod.actionsStrings.TEXT[0]);
                 tickDuration();
             }
         }

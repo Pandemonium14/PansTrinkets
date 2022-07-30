@@ -1,5 +1,6 @@
 package pansTrinkets.cards;
 
+import basemod.abstracts.CustomSavable;
 import com.evacipated.cardcrawl.mod.stslib.StSLib;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -15,7 +16,7 @@ import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static pansTrinkets.DefaultMod.makeCardPath;
 import static pansTrinkets.patches.EnumColorPatch.TRINKET_WHITE;
 
-public class HungryCoin extends AbstractTrinket {
+public class HungryCoin extends AbstractTrinket implements CustomSavable<Integer> {
 
     public static final String ID = DefaultMod.makeID(HungryCoin.class.getSimpleName());
     public static final String IMG = makeCardPath("HungryCoin.png");
@@ -31,7 +32,8 @@ public class HungryCoin extends AbstractTrinket {
 
     public HungryCoin() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.baseDamage = 3;
+        misc = 3;
+        this.baseDamage = misc;
         this.baseMagicNumber = 10;
         this.weight = 1;
 
@@ -48,12 +50,12 @@ public class HungryCoin extends AbstractTrinket {
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         abstractPlayer.loseGold(baseMagicNumber);
         addToBot( new DamageAction(abstractMonster, new DamageInfo(abstractMonster, this.damage)));
-        this.baseDamage += increment;
+        baseDamage += increment;
         //this.baseMagicNumber += increment;
         AbstractCard masterCard = StSLib.getMasterDeckEquivalent(this);
         if (masterCard != null) {
             masterCard.baseDamage += increment;
-            //masterCard.baseMagicNumber += increment;
+            masterCard.initializeDescription();
         }
         this.makeVisualEffects(abstractPlayer, abstractMonster);
     }
@@ -70,6 +72,19 @@ public class HungryCoin extends AbstractTrinket {
             increment = 5;
             super.upgrade();
             this.initializeDescription();
+        }
+    }
+
+    @Override
+    public Integer onSave() {
+        return baseDamage;
+    }
+
+    @Override
+    public void onLoad(Integer integer) {
+        if (integer != null) {
+            baseDamage = integer;
+            initializeDescription();
         }
     }
 }

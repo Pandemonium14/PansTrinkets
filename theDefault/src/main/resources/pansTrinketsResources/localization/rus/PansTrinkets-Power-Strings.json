@@ -1,0 +1,30 @@
+{
+"pansTrinkets:CommonPower": {
+        "NAME": "Placeholder Power",
+        "DESCRIPTIONS": ["You applied #b", " keyword.", " keywords."]
+},
+"pansTrinkets:RarePower": {
+        "NAME": "Placeholder Power",
+        "DESCRIPTIONS": ["В начале вашего хода, TOUCH #b", " врага." , " врагов."]
+},
+"pansTrinkets:ExplosiveTrapPower": {
+        "NAME": "Взрывоопасная ловушка",
+        "DESCRIPTIONS": ["Наносит #b", "урона первому врагу, который вас атаковал."]
+},
+"pansTrinkets:KaleidoscopePower": {
+        "NAME": "Калейдоскоп",
+        "DESCRIPTIONS": ["В начале вашего хода добавьте [#C0C0C0]случайную #yиллюзорную карту [#C0C0C0]случайного цвета в руку.","В начале вашего хода добавьте #b"," [#C0C0C0]случайные #yиллюзорные карты [#C0C0C0]случайного цвета в руку."]
+},
+"pansTrinkets:BoomerangPower": {
+        "NAME": "Бумеранг",
+        "DESCRIPTIONS": ["Следующая разыгранная карта возвращается обратно в руку.","Следующие #b"," разыгранные карты возвращаются обратно в руку."]
+},
+"pansTrinkets:EchoChamberPower": {
+        "NAME": "Эхо-камера",
+        "DESCRIPTIONS": ["Каждая 5-ая разыгрываемая карта играется #b"," раза."]
+},
+"pansTrinkets:SuperconductivePower": {
+        "NAME": "Сверхпроводимость",
+        "DESCRIPTIONS": ["В конце вашего хода, [#AFEEEE]заряжает #b"," [#65E0EC]Сферу [#6495ED]Молнии и [#AFEEEE]заряжает #b"," [#65E0EC]Сферу [#00BFFF]Льда , если у вас нет [#65E0EC]Сфер."]
+        }
+}

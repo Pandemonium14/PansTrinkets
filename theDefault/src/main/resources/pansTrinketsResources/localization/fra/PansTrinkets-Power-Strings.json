@@ -1,0 +1,30 @@
+{
+"pansTrinkets:CommonPower": {
+        "NAME": "Placeholder Power",
+        "DESCRIPTIONS": ["You applied #b", " keyword.", " keywords."]
+},
+"pansTrinkets:RarePower": {
+        "NAME": "Placeholder Power",
+        "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
+},
+"pansTrinkets:ExplosiveTrapPower": {
+        "NAME": "Piège Explosif",
+        "DESCRIPTIONS": ["La prochaine fois que vous perdez des PV, infligez #b", "dégats à TOUT les ennemis."]
+},
+"pansTrinkets:KaleidoscopePower": {
+        "NAME": "Kaleidoscope",
+        "DESCRIPTIONS": ["Au début de votre tour, ajoutez une carte #yIllusoire aléatoire de n'importe quelle couleur à votre main.","Au début de votre tour, ajoutez #b"," cartes #yIllusoires aléatoires de n'importe quelles couleurs à votre main."]
+},
+"pansTrinkets:BoomerangPower": {
+        "NAME": "Boomerang",
+        "DESCRIPTIONS": ["La prochaine carte jouée est remise dans votre main.","Les #b"," prochaines cartes jouées sont remises dans votre main."]
+},
+"pansTrinkets:EchoChamberPower": {
+        "NAME": "Chambre de Résonance",
+        "DESCRIPTIONS": ["Toutes les 5 cartes jouées, jouez une carte #b"," fois."]
+},
+        "pansTrinkets:SuperconductivePower": {
+                "NAME": "Superconductive",
+                "DESCRIPTIONS": ["At the end of your turn, #yChannel #b"," #yLightning and #yChannel #b"," #yFrost if you don't have any."]
+        }
+}

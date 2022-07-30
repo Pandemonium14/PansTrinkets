@@ -1,0 +1,62 @@
+[
+  {
+    "NAMES": [
+      "keyword",
+      "keywords"
+    ],
+    "DESCRIPTION": "Whenever you play a card, gain 1 dexterity this turn only."
+  },
+  {
+    "PROPER_NAME": "Multiword Keyword",
+    "NAMES": [
+      "Multiword Keyword",
+      "multiword_keyword",
+      "multiword_keywords",
+      "multikey",
+      "multikeyword"
+    ],
+    "DESCRIPTION": "Make sure the first element in the NAMES is the same as your PROPER_NAME. The rest is to match keywords like the single word keyword."
+  },
+  {
+    "NAMES": [
+      "Léger",
+      "léger"
+    ],
+    "DESCRIPTION": "Quand vous piochez cette carte, piochez une carte."
+  },
+  {
+    "NAMES": [
+      "Durability",
+      "durability"
+    ],
+    "DESCRIPTION": "Whenever you play this card, lose 1 durability. When it reaches 0, remove this card from your deck."
+  },
+  {
+    "NAMES": [
+      "Weight",
+      "weight"
+    ],
+    "DESCRIPTION": "You can only carry trinkets of a total weight lower than 10."
+  },
+  {
+    "NAMES": [
+      "Illusoire",
+      "illusoire"
+    ],
+    "DESCRIPTION": "Les cartes Illusoires sont épuisées quand vous les jouez, ou à la fin du tour si elles sont en main."
+  },
+  {
+    "NAMES": [
+      "Lourd",
+      "lourd"
+    ],
+    "DESCRIPTION": "Quand vous piochez cette carte, placez une carte de votre main autre que celle ci sur le haut de la pioche."
+  },
+  {
+    "NAMES": [
+      "Shifting",
+      "shifting"
+    ],
+    "DESCRIPTION": "When drawn or played, replace this card with a random Shifting trinket"
+  }
+]

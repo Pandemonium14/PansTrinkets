@@ -4,16 +4,19 @@ import basemod.TopPanelItem;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.TipHelper;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import pansTrinkets.DefaultMod;
 import pansTrinkets.helpers.TrinketHelper;
 
 public class TopPanelWeight extends TopPanelItem {
 
     public static final String ID = DefaultMod.makeID(TopPanelItem.class.getSimpleName());
+    public static final UIStrings strings = CardCrawlGame.languagePack.getUIString("pansTrinkets:TopPanelWeightIcon");
 
     private int maxWeight;
     private int currentWeight;
@@ -48,12 +51,9 @@ public class TopPanelWeight extends TopPanelItem {
         maxWeight = TrinketHelper.maxWeight;
         currentWeight = TrinketHelper.carriedWeight(AbstractDungeon.player);
 
-        TipHelper.renderGenericTip(x, y - Settings.HEIGHT / 26.0f, "Carried weight", assembleString());
+        TipHelper.renderGenericTip(x, y - Settings.HEIGHT / 26.0f, strings.TEXT[0], strings.EXTRA_TEXT[0]);
     }
 
-    private String assembleString() {
-        return "Every trinket has a weight. You can only add trinkets to your deck with a total weight lower than your maximum weight. You gain 1 Max Weight for every two cards you add to your deck.";
-    }
 
 
 }

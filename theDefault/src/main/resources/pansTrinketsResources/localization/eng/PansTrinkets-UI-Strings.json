@@ -1,0 +1,20 @@
+{
+"pansTrinkets:TrinketReward" : {
+  "TEXT": ["Get a trinket"],
+  "EXTRA_TEXT": ["Choose one trinket."]
+},
+  "pansTrinkets:WeightToolTip" : {
+    "TEXT" : ["[pansTrinkets:WeightIcon] Weight"],
+    "EXTRA_TEXT" : ["You can only carry trinkets of a total weight lower than your Max Weight. You gain #y1 Max Weight for every two cards you add to your deck."]
+  },
+  "pansTrinkets:Actions" : {
+    "TEXT" : ["Choose one card to add to your hand." ," duplicate.", " reduce its cost to zero."]
+  },
+  "pansTrinkets:CampfireOption" : {
+    "TEXT" : ["Remove a trinket." ,"Remove a trinket from your deck. Free action."]
+  },
+  "pansTrinkets:TopPanelWeightIcon" : {
+    "TEXT" : ["[pansTrinkets:WeightIcon] Weight"],
+    "EXTRA_TEXT" : ["You can only carry trinkets of a total weight lower than your Max Weight. You gain #y1 Max Weight for every two cards you add to your deck."]
+  }
+}
